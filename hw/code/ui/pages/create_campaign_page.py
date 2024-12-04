@@ -57,7 +57,6 @@ class CreateCampaignPage(BasePage):
         )
 
     def click_continue_button(self):
-        time.sleep(5)
         self.click(self.locators.CONTINUE_BUTTON)
         
     def select_region(self):

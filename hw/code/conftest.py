@@ -1,5 +1,5 @@
 from ui.fixtures import *
-
+import pytest
 
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
@@ -32,3 +32,8 @@ def config(request):
         'selenoid': selenoid,
         'vnc': vnc,
     }
+
+@pytest.fixture(scope='function', autouse=True)
+def setup(driver, config, request):
+    request.cls.driver = driver
+    request.cls.config = config

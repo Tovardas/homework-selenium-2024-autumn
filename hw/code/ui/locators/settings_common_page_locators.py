@@ -4,7 +4,7 @@ from ui.locators.base_page_locators import BasePageLocators
 
 class SettingsCommonPageLocators(BasePageLocators):
     SAVE_BUTTON = (By.XPATH, "//span[text()='Сохранить']")
-    CANCEL_BUTTON = (By.XPATH, "//*[contains(@class, 'FormControls_buttons__')]/button[@type='button']")
+    CANCEL_BUTTON = (By.XPATH, "//*[contains(@class, 'FormControls_buttons__')]//button[@data-testid='settings-cancel']")
 
     PHONE_NUMBER_INPUT = (By.XPATH, "//*[@data-testid='general-phone']")
     PHONE_NUMBER_ERROR = (By.XPATH, "//*[contains(@class, 'Contacts_wrap__')]//*[@role='alert']/div")

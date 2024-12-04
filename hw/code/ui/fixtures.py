@@ -18,6 +18,7 @@ from ui.pages.audience_page import AudiencePage
 from ui.pages.create_campaign_page import CreateCampaignPage
 from ui.pages.forum_page import ForumsPage
 from ui.pages.campaign_page import CampaignPage
+from ui.verification.audience_verification import AudienceVerification
 
 import os
 from dotenv import load_dotenv
@@ -134,3 +135,7 @@ def create_campaign_page(driver, cabinet_page):
 def budget_page(driver, cabinet_page):
     driver.get(BudgetPage.url)
     return BudgetPage(driver=driver)
+
+@pytest.fixture
+def verification(audience_page):
+    return AudienceVerification(audience_page)

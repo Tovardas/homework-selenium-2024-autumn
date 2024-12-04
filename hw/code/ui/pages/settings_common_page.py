@@ -1,7 +1,7 @@
 from selenium.webdriver import Keys
 from ui.pages.base_page import BasePage
 from ui.locators.settings_common_page_locators import SettingsCommonPageLocators
-
+import time
 
 class SettingsCommonPage(BasePage):
     url = 'https://ads.vk.com/hq/settings'
@@ -83,5 +83,6 @@ class SettingsCommonPage(BasePage):
         self.click(self.locators.SAVE_BUTTON)
 
     def click_cancel_button(self):
+        time.sleep(1)
         self.click(self.locators.CANCEL_BUTTON)
         

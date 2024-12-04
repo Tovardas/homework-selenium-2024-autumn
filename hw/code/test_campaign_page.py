@@ -35,7 +35,6 @@ class TestCampaignPage(BaseCase):
         assert campaign_page.name_sign_became_visible()
         campaign_page.rename_entity(campaign_page.GROUP_NAME)
         assert campaign_page.has_sections_title_content()
-        time.sleep(5)
         assert campaign_page.has_section_region_region_buttons_content()
         campaign_page.click_russia_button()
         campaign_page.click_demography_section()
