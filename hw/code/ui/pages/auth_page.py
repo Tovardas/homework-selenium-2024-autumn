@@ -1,6 +1,5 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 from ui.pages.base_page import BasePage
 from ui.locators.auth_page_locators import AuthPageLocators
 import time
@@ -57,13 +56,12 @@ class AuthPage(BasePage):
             )
             time.sleep(20)
 
-
-        WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(self.locators.CLOSE_GUIDE_BUTTON)
-        )
-        self.click(self.locators.CLOSE_GUIDE_BUTTON)
-        WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(self.locators.OVERVIEW_BUTTON)
-        )
+        if self.became_visible(self.locators.CLOSE_GUIDE_BUTTON):
+            WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(self.locators.CLOSE_GUIDE_BUTTON)
+            )
+            self.click(self.locators.CLOSE_GUIDE_BUTTON)
+            WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(self.locators.OVERVIEW_BUTTON)
+            )
         self.click(self.locators.OVERVIEW_BUTTON)
-
