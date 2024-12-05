@@ -19,12 +19,12 @@ class CampaignPageLocators(BasePageLocators):
     TARGET_TABS = (By.XPATH, "//*[contains(@class, 'ObjectiveTabs_tabItemContent__') and text()='Целевые действия']")
 
     RECOGNITION_TABS = (
-    By.XPATH, "//*[contains(@class, 'ObjectiveTabs_tabItemContent__') and text()='Узнаваемость и охват']")
+        By.XPATH, "//*[contains(@class, 'ObjectiveTabs_tabItemContent__') and text()='Узнаваемость и охват']")
 
     TARGET_TABS_SIGN = (By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Что будете рекламировать?']")
 
     RECOGNITION_TABS_SIGN = (
-    By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Какой формат будете использовать?']")
+        By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Какой формат будете использовать?']")
 
     @staticmethod
     def CATEGORY_CELL(sign):
@@ -98,29 +98,37 @@ class CampaignPageLocators(BasePageLocators):
     UPLOAD_AVATAR = (By.XPATH, "//*[contains(@class, 'UploadMediaButton_buttonLogoIcon__')]")
 
     TITLE_LABEL = (By.XPATH, "//span[contains(@class, 'FormItem_topText__') and text()='Заголовок']")
-    TITLE_INPUT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'заголовок, макс. 40 символов')]")
+    TITLE_INPUT = (By.XPATH,
+                   "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'заголовок, макс. 40 символов')]")
     SHORT_DESCRIPTION = (
-    By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Короткое описание']")
-    SHORT_DESCRIPTION_INPUT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'описание, макс. 90 символов')]")
+        By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Короткое описание']")
+    SHORT_DESCRIPTION_INPUT = (By.XPATH,
+                               "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'описание, макс. 90 символов')]")
     SHORT_DESCRIPTION_TEXT = (By.XPATH,
-                               "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'описание, макс. 90 символов')]//p")
+                              "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'описание, макс. 90 символов')]//p")
     LONG_DESCRIPTION = (By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Длинное описание']")
-    LONG_DESCRIPTION_INPUT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'Длинный текст для использования в лентах соцсетей (2000 знаков)')]")
-    LONG_DESCRIPTION_TEXT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'Длинный текст для использования в лентах соцсетей (2000 знаков)')]//p")
+    LONG_DESCRIPTION_INPUT = (By.XPATH,
+                              "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'Длинный текст для использования в лентах соцсетей (2000 знаков)')]")
+    LONG_DESCRIPTION_TEXT = (By.XPATH,
+                             "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'Длинный текст для использования в лентах соцсетей (2000 знаков)')]//p")
 
     BUTTON_TEXT = (
-    By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Текст рядом с кнопкой']")
-    BUTTON_TEXT_INPUT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'Доп. заголовок 30 знаков')]")
+        By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='Текст рядом с кнопкой']")
+    BUTTON_TEXT_INPUT = (By.XPATH,
+                         "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'Доп. заголовок 30 знаков')]")
     ADVERTISER_DESCRIPTION = (
-    By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='О рекламодателе']")
-    ADVERTISER_DESCRIPTION_INPUT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'юридическая информация, макс. 115 символов')]")
-    ADVERTISER_DESCRIPTION_TEXT = (By.XPATH, "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'юридическая информация, макс. 115 символов')]//p")
+        By.XPATH, "//*[contains(@class, 'FormItem_topText__') and text()='О рекламодателе']")
+    ADVERTISER_DESCRIPTION_INPUT = (By.XPATH,
+                                    "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'юридическая информация, макс. 115 символов')]")
+    ADVERTISER_DESCRIPTION_TEXT = (By.XPATH,
+                                   "//span[contains(@class, 'vkuiFormField--sizeY-compact')]//div//div[contains(@data-testid, 'юридическая информация, макс. 115 символов')]//p")
     MEDIATEC = (By.XPATH, "//*[@data-testid='set-global-image']")
     IMAGE_ITEM = (By.XPATH, "//*[contains(@class, 'ImageItem_imageItem__')]")
     PREVIEW_IMAGE = (By.XPATH, "//*[contains(@class, 'AdMediaPreview_preview__')]")
     SUBMIT_BUTTON = (By.XPATH, "//*[@data-testid='submit']")
     CANCEL_BUTTON = (By.XPATH, "//button[@data-testid='cancel']")
-    CONFIRM_CANCEL_BUTTON = (By.XPATH, "//div[contains(@class, 'ModalConfirm_buttons__')]//button[@data-testid='cancel']")
+    CONFIRM_CANCEL_BUTTON = (
+        By.XPATH, "//div[contains(@class, 'ModalConfirm_buttons__')]//button[@data-testid='cancel']")
 
     MEDIA_CONTENT_LIST = (By.XPATH, "//*[contains(@class, 'MediaContentList_flexContainer__')]")
 
@@ -154,7 +162,6 @@ class CampaignPageLocators(BasePageLocators):
 
     PEGI_16_AGE_SELECT = (By.XPATH, "//*[contains(@class, 'vkuiTypography') and text()='16+']")
 
-
     @staticmethod
     def CHECKBOX_NAME_IS_CHECKED_OR_NOT(checkbox, state):
         return (
@@ -167,7 +174,8 @@ class CampaignPageLocators(BasePageLocators):
     MODAL_SEND_BUTTON = (By.XPATH,
                          "//*[contains(@class, 'vkuiModalCard')]//*[contains(@class, 'vkuiButton__content') and text()='Отправить']")
     MODAL_CANCEL_BUTTON = (
-    By.XPATH, "//*[contains(@class, 'vkuiModalCard')]//*[contains(@class, 'vkuiButton__content') and text()='Отмена']")
+        By.XPATH,
+        "//*[contains(@class, 'vkuiModalCard')]//*[contains(@class, 'vkuiButton__content') and text()='Отмена']")
 
     @staticmethod
     def SIDEBAR_SITE_NAME_INPUT(url):
@@ -219,4 +227,5 @@ class CampaignPageLocators(BasePageLocators):
 
     @staticmethod
     def SIDEBAR_AD_INPUT(input, value):
-        return (By.XPATH, f"//*[contains(@class, 'vkuiFormItem') and .//*[contains(@class, 'FormItem_topText__') and text()='{input}']]//*[text()='{value}']")
+        return (By.XPATH,
+                f"//*[contains(@class, 'vkuiFormItem') and .//*[contains(@class, 'FormItem_topText__') and text()='{input}']]//*[text()='{value}']")

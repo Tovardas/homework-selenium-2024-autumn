@@ -1,4 +1,4 @@
-class AudienceVerification:
+class AudiencePageVerification:
     def __init__(self, audience_page):
         self.audience_page = audience_page
 

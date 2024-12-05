@@ -72,6 +72,7 @@ class AudiencePageLocators(BasePageLocators):
     MODAL_PAGE_SUBMIT_BUTTON = (By.XPATH, "//*[contains(@class, 'vkuiTappable--hasActive') and @type='submit']")
     CREATED_AUDIENCE_TITLE = (By.XPATH, "//*[contains(@class, 'NameCell_wrapper__')]/h5")
     AUDIENCE_ITEM = (By.CLASS_NAME, "NameCell_wrapper__hxqrL")
+    AUDIENCE_READY = (By.XPATH, "//*[contains(@class, 'Hint_hintTrigger__') and text()='Показать 2 похожие']")
 
     AUDIENCE_MENU = (By.CLASS_NAME, "NameCell_details__WyuPr")
     DELETE_BUTTON = (By.XPATH, "(//span[text()='Удалить'])[1]")

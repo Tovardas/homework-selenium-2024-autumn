@@ -46,7 +46,6 @@ class CreateCampaignPage(BasePage):
     
     def fill_budget_field(self, budget_value):
         budget_field = self.find(self.locators.BUDGET_INPUT)
-        budget_field.click()
         budget_field.clear()
         budget_field.send_keys(budget_value)
         
@@ -57,6 +56,7 @@ class CreateCampaignPage(BasePage):
         )
 
     def click_continue_button(self):
+        time.sleep(1)
         self.click(self.locators.CONTINUE_BUTTON)
         
     def select_region(self):

@@ -43,7 +43,7 @@ class AudiencePage(BasePage):
     def enter_audience_name(self, audience_name: str):
         time.sleep(1)
         elem = self.find(self.locators.AUDIENCE_NAME_INPUT)
-        self.find(self.locators.AUDIENCE_NAME_INPUT).clear()
+        elem.clear()
         elem.send_keys(audience_name)
         elem.send_keys(Keys.ENTER)
 
@@ -89,7 +89,7 @@ class AudiencePage(BasePage):
         key_phrases_input.send_keys(' '.join(key_phrases))
 
     def click_modal_page_submit_button(self):
-        time.sleep(2)
+        self.became_visible(self.locators.AUDIENCE_READY)
         try:
             self.click(self.locators.MODAL_PAGE_SUBMIT_BUTTON, timeout=5)
         except TimeoutException:

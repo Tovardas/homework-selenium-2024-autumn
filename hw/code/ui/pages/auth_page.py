@@ -54,7 +54,7 @@ class AuthPage(BasePage):
             WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(self.locators.MAIL_RU_SUBMIT_BUTTON)
             )
-            time.sleep(20)
+            time.sleep(30)
 
         if self.became_visible(self.locators.CLOSE_GUIDE_BUTTON):
             WebDriverWait(self.driver, 10).until(
