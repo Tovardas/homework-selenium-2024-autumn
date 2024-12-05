@@ -16,7 +16,7 @@ class PixelsPageLocators(BasePageLocators):
     MODAL_CREATE_NEW_PIXEL_CONF = (By.XPATH, "//div[@role='button' and .//span[text()='Создать новый пиксель']]")
     MODAL_CREATION_SUCCESS = (By.XPATH, "//h2[contains(text(), 'Создан ID пикселя')]")
     MODAL_CREATION_SUCCESS_CANCEL = (By.XPATH, "//div[@role='button' and @aria-label='Закрыть']")
-    FIRST_ADDED_PIXEL_MORE = (By.XPATH, "//button[@type='button' and @aria-label='More']")
+    FIRST_ADDED_PIXEL_MORE = (By.XPATH, "(//button[@type='button' and @aria-label='More'])[last()]")
     PIXEL_DELETE_BUTTON = (By.XPATH, "//label[contains(., 'Удалить пиксель')]")
     PIXEL_DELETE_CONF = (By.XPATH, "//button[.//span[text()='Удалить']]")
     PIXEL_DELETE_CONF_CANCEL = (By.XPATH, "//button[.//span[text()='Отмена']]")
@@ -48,6 +48,16 @@ class PixelsPageLocators(BasePageLocators):
     NEW_EVENT_CONF_FALSE = (By.XPATH, "//button[@type='button' and @data-testid='cancel']")
     NEW_EVENT_CONF_TRUE = (By.XPATH, "//button[@type='submit' and @data-testid='submit']")
     EVENT_NAME_FIELD = (By.XPATH, "//span[@class='vkuiFormField vkuiFormField--mode-default vkuiFormField--sizeY-compact vkui-focus-visible vkuiInput vkuiInput--sizeY-compact']/input[@type='text' and @placeholder='Введите название']")
+
+
+    @staticmethod
+    def CATEGORY_SELECT_INPUT(category):
+        return (By.XPATH, f"//*[contains(@class, 'vkuiFormField') and .//*[text()='{category}']]//input")
+
+    @staticmethod
+    def DROPDOWN_OPTIONS(content):
+        return (By.XPATH, f"(//*[text()='{content}'])[last()]")
+
     EVENT_CATEGORY_FIELD = (By.XPATH, "//div[@class='vkuiCustomSelectInput__input-group']//input[@type='text' and @placeholder='Выберите категорию']")
     EVENT_CATEGORY_FIELD_CONTENT = (By.XPATH, "//select[@class='vkuiCustomSelect__control']/option[@value='purchase']")
     EVENT_REQUIREMENT_HREF = (By.XPATH, "//div[@class='vkuiCustomSelect vkuiCustomSelect--sizeY-compact']//input[@placeholder='Выберите условие']")
@@ -55,3 +65,8 @@ class PixelsPageLocators(BasePageLocators):
     EVENT_URL_FIELD = (By.XPATH, "//input[@placeholder='Введите значение']")
     EVENT_SET_VALUE_BUTTON = (By.XPATH, "//button[@class='vkuiButton vkuiButton--size-m vkuiButton--mode-link vkuiButton--appearance-accent vkuiButton--align-center vkuiButton--with-icon vkuiTappable vkuiInternalTappable vkuiTappable--sizeX-none vkuiTappable--hasHover vkuiTappable--hasActive vkui-focus-visible']")
     EVENT_VALUE_FIELD = (By.XPATH, "//input[@class='vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-compact' and @placeholder='Введите ценность']")
+
+    EVENT_TIME_PERIOD_FIELD = (By.XPATH, "//div[@class='vkuiCustomSelect vkuiCustomSelect--sizeY-compact']")
+    EVENT_AMOUNT_FIELD = (By.XPATH, "//input[@placeholder='Выберите количество']")
+    EVENT_JS_FIELD = (By.XPATH, "(//input[@placeholder='Введите название'])[2]")
+

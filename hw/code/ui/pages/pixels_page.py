@@ -14,6 +14,13 @@ class PixelsPage(BasePage):
     url = 'https://ads.vk.com/hq/pixels'
     locators = PixelsPageLocators()
 
+    USER_CONVERSIONS = 'Пользовательские конверсии'
+    EVENT_HREF = 'Посещена страница'
+    TIME_PERIOD = 'Просмотрено страниц'
+    TIME_PERIOD_FIELD = 'За посещение'
+    EVENT_JS = 'Произошло JS-событие'
+
+
     def is_element_displayed(self, locator):
         try:
             self.wait().until(EC.visibility_of_element_located(locator))
@@ -128,7 +135,6 @@ class PixelsPage(BasePage):
     def sync_user_warning_displayed(self) -> bool:
         return self.is_element_displayed(self.locators.USER_SYNC_WARNING)
 
-
     def click_create_tag_button(self):
         self.click(self.locators.CREATE_TAG_BUTTON)
 
@@ -168,22 +174,52 @@ class PixelsPage(BasePage):
         site_rename_field.send_keys(name)
 
     def choose_event_category(self):
-        self.click(self.locators.EVENT_CATEGORY_FIELD)
-        element = self.find(self.locators.EVENT_CATEGORY_FIELD_CONTENT)
-        element.send_keys(Keys.ENTER)
-        element.click()
+        self.scroll_and_click(self.locators.CATEGORY_SELECT_INPUT('Выберите категорию'))
+        self.scroll_and_click(self.locators.DROPDOWN_OPTIONS(self.USER_CONVERSIONS))
+
 
     def choose_event_requirement_href(self):
-        self.click(self.locators.EVENT_REQUIREMENT_HREF)
-        self.click(self.locators.EVENT_REQUIREMENT_HREF_CONTENT)
+        self.scroll_and_click(self.locators.CATEGORY_SELECT_INPUT('Выберите условие'))
+        self.scroll_and_click(self.locators.DROPDOWN_OPTIONS(self.EVENT_HREF))
+
+    def choose_event_requirement_js(self):
+        self.scroll_and_click(self.locators.CATEGORY_SELECT_INPUT('Выберите условие'))
+        self.scroll_and_click(self.locators.DROPDOWN_OPTIONS(self.EVENT_JS))
+
+    def choose_event_requirement_with_time_period(self):
+        self.scroll_and_click(self.locators.CATEGORY_SELECT_INPUT('Выберите условие'))
+        self.scroll_and_click(self.locators.DROPDOWN_OPTIONS(self.TIME_PERIOD))
 
     def event_url_field_is_displayed(self):
         return self.is_element_displayed(self.locators.EVENT_URL_FIELD)
+
+    def event_time_period_field_is_displayed(self) -> bool:
+        return self.is_element_displayed(self.locators.EVENT_TIME_PERIOD_FIELD)
+
+    def event_amount_field_is_displayed(self) -> bool:
+        return self.is_element_displayed(self.locators.EVENT_AMOUNT_FIELD)
+
+    def event_js_field_is_displayed(self) -> bool:
+        return self.is_element_displayed(self.locators.EVENT_JS_FIELD)
+
+    def enter_event_time_period(self):
+        self.scroll_and_click(self.locators.CATEGORY_SELECT_INPUT('За День'))
+        self.scroll_and_click(self.locators.DROPDOWN_OPTIONS(self.TIME_PERIOD_FIELD))
+
+    def enter_event_amount(self, number):
+        site_rename_field = self.find(self.locators.EVENT_AMOUNT_FIELD)
+        site_rename_field.clear()
+        site_rename_field.send_keys(number)
 
     def enter_event_url_field(self, url):
         site_rename_field = self.find(self.locators.EVENT_URL_FIELD)
         site_rename_field.clear()
         site_rename_field.send_keys(url)
+
+    def enter_event_js_field(self, name):
+        site_rename_field = self.find(self.locators.EVENT_JS_FIELD)
+        site_rename_field.clear()
+        site_rename_field.send_keys(name)
 
     def click_event_set_value(self):
         self.click(self.locators.EVENT_SET_VALUE_BUTTON)
