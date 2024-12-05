@@ -1,4 +1,5 @@
 import time
+
 import allure
 
 from base_case import BaseCase
@@ -14,7 +15,6 @@ class TestMainPage(BaseCase):
     def test_automatic_change_slide(self, main_page, main_page_verification):
         with allure.step("Ожидаем автоматическую смену слайда и проверяем изменение заголовка"):
             initial_title = main_page.get_slide_title()
-            time.sleep(7)
             main_page_verification.check_slide_title_changed(initial_title)
 
     def test_go_to_auth(self, main_page, main_page_verification):

@@ -1,11 +1,12 @@
-from ui.pages.base_page import BasePage
 import time
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from ui.locators.create_campaign_page_locators import CreateCampaignPageLocators
+
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from ui.locators.create_campaign_page_locators import CreateCampaignPageLocators
+from ui.pages.base_page import BasePage
+
 
 class CreateCampaignPage(BasePage):
     url = 'https://ads.vk.com/hq/dashboard'
@@ -23,7 +24,7 @@ class CreateCampaignPage(BasePage):
     def enter_advertised_site_url(self, url):
         site_field = self.find(self.locators.ADVERTISED_SITE_FIELD)
         site_field.clear()
-        site_field.send_keys(url + Keys.RETURN) 
+        site_field.send_keys(url + Keys.RETURN)
 
     def is_element_displayed(self, locator):
         try:
@@ -34,31 +35,30 @@ class CreateCampaignPage(BasePage):
 
     def is_advertised_site_field_present(self):
         return self.is_element_displayed(self.locators.ADVERTISED_SITE_FIELD)
-    
+
     def fields_displayed(self):
         return (
-            self.is_element_displayed(self.locators.ADD_PIXEL) and
-            self.is_element_displayed(self.locators.TARGET_ACTION) and
-            self.is_element_displayed(self.locators.BETTING_STRATEGY) and 
-            self.is_element_displayed(self.locators.BUDGET) and
-            self.is_element_displayed(self.locators.DATES)
+                self.is_element_displayed(self.locators.ADD_PIXEL) and
+                self.is_element_displayed(self.locators.TARGET_ACTION) and
+                self.is_element_displayed(self.locators.BETTING_STRATEGY) and
+                self.is_element_displayed(self.locators.BUDGET) and
+                self.is_element_displayed(self.locators.DATES)
         )
-    
+
     def fill_budget_field(self, budget_value):
         budget_field = self.find(self.locators.BUDGET_INPUT)
         budget_field.clear()
         budget_field.send_keys(budget_value)
-        
+
         budget_value_without_currency = budget_field.get_attribute("value").replace('₽', '')
-        
+
         WebDriverWait(self.driver, 20).until(
             lambda driver: budget_value_without_currency in budget_field.get_attribute("value")
         )
 
     def click_continue_button(self):
-        time.sleep(1)
         self.click(self.locators.CONTINUE_BUTTON)
-        
+
     def select_region(self):
         self.click(self.locators.REGION)
 

@@ -1,5 +1,5 @@
-from ui.pages.base_page import BasePage
 from ui.locators.registration_page_locators import RegistrationPageLocators
+from ui.pages.base_page import BasePage
 
 
 class RegistrationPage(BasePage):

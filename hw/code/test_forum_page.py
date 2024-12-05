@@ -1,5 +1,6 @@
-from base_case import BaseCase
 import allure
+
+from base_case import BaseCase
 
 
 class TestForumPage(BaseCase):

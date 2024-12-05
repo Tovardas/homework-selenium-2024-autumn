@@ -1,8 +1,9 @@
-from ui.pages.base_page import BasePage
-from selenium.webdriver.common.keys import Keys
-from ui.locators.center_commerce_page_locators import CenterCommercePageLocators
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
+from ui.locators.center_commerce_page_locators import CenterCommercePageLocators
+from ui.pages.base_page import BasePage
+
 
 class CenterCommercePage(BasePage):
     url = 'https://ads.vk.com/hq/ecomm/catalogs'
@@ -13,10 +14,10 @@ class CenterCommercePage(BasePage):
 
     def learning_modal_page_became_visible(self) -> bool:
         return self.became_visible(self.locators.LEARNING_MODAL)
-    
+
     def choice_learning_modal_page_became_visible(self) -> bool:
         return self.became_visible(self.locators.CHOICE_LEARNING_MODAL)
-    
+
     def close_choice_learning_modal_page(self) -> bool:
         return self.click(self.locators.CHOICE_LEARNING_MODAL_CLOSE_BUTTON)
 
@@ -79,7 +80,7 @@ class CenterCommercePage(BasePage):
 
     def field_period_displayed(self):
         return self.is_element_displayed(self.locators.REFRESH_PERIOD_SELECT)
-    
+
     def field_utm_displayed(self):
         return self.is_element_displayed(self.locators.UTM_CHECKBOX)
 
@@ -100,4 +101,3 @@ class CenterCommercePage(BasePage):
 
     def field_feed_file_displayed(self):
         return self.is_element_displayed(self.locators.FEED_FILE_INPUT)
-        

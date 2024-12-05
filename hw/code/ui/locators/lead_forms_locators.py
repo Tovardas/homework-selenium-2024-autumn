@@ -33,7 +33,7 @@ class LeadFormsPageLocators(BasePageLocators):
     MORE_TEXT_INPUT = (By.XPATH, "//textarea[@placeholder='Расскажите о вашем предложении']")
     MAGNET_BONUS_INPUT = (By.XPATH, "//input[@placeholder='Бонус']")
     MAGNET_SALE_INPUT = (
-    By.XPATH, "(//input[contains(@class, 'vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none')])[4]")
+        By.XPATH, "(//input[contains(@class, 'vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none')])[4]")
 
     ERROR_1_NAME = (By.XPATH, "//span[preceding-sibling::span[input[@placeholder='Название лид-формы']]]")
     ERROR_1_HEADING = (By.XPATH, "//span[preceding-sibling::span[input[@placeholder='Название компании']]]")
@@ -42,7 +42,7 @@ class LeadFormsPageLocators(BasePageLocators):
     ERROR_1_LOGO = (By.XPATH,
                     "//span[preceding-sibling::div[@class='vkuiSimpleCell vkuiSimpleCell--sizeY-none vkuiCellButton vkuiTappable vkuiInternalTappable vkuiTappable--hasHover vkuiTappable--hasActive vkui-focus-visible']]")
     ERROR_MORE_TEXT = (
-    By.XPATH, "//span[preceding-sibling::span[textarea[@placeholder='Расскажите о вашем предложении']]]")
+        By.XPATH, "//span[preceding-sibling::span[textarea[@placeholder='Расскажите о вашем предложении']]]")
     ERROR_1_MAGNET_BONUS = (By.XPATH, "//span[preceding-sibling::span[input[@placeholder='Бонус']]]")
     ERROR_1_MAGNET_SALE_ZERO = (By.XPATH, "//div[contains(text(), 'Значение должно быть больше нуля')]")
     ERROR_1_MAGNET_SALE_OVER = (By.XPATH, "//div[contains(text(), 'Укажите скидку не больше 100%')]")
@@ -60,11 +60,11 @@ class LeadFormsPageLocators(BasePageLocators):
     ANSWER_3_INPUT = (By.XPATH, "(//input[@placeholder='Введите ответ'])[3]")
 
     HEADING_INPUT = (
-    By.XPATH, "(//input[contains(@class, 'vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none')])[1]")
+        By.XPATH, "(//input[contains(@class, 'vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none')])[1]")
     INPUT_3_HEADING_ALT = (
-    By.XPATH, "(//input[@class='vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none'])[1]")
+        By.XPATH, "(//input[@class='vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none'])[1]")
     DESCRIPTION_3_INPUT = (
-    By.XPATH, "(//input[contains(@class, 'vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none')])[2]")
+        By.XPATH, "(//input[contains(@class, 'vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none')])[2]")
     SITE_INPUT = (By.XPATH, "(//input[@class='vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none'])[3]")
     PHONE_INPUT = (By.XPATH, "//input[@placeholder='+7......']")
     PROMOCODE_INPUT = (By.XPATH, "//input[@placeholder='Введите промокод']")
@@ -74,15 +74,15 @@ class LeadFormsPageLocators(BasePageLocators):
     PROMOCODE_BUTTON = (By.XPATH, "//span[contains(text(), 'Добавить промокод')]")
 
     ERROR_3_HEADING = (
-    By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[1]")
+        By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[1]")
     ERROR_3_DESCRIPTION = (
-    By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[2]")
+        By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[2]")
     ERROR_3_SITE = (
-    By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[3]")
+        By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[3]")
     ERROR_3_PHONE = (
-    By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[4]")
+        By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[4]")
     ERROR_3_PROMO = (
-    By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[5]")
+        By.XPATH, "(//span[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote'])[5]")
 
     NOTIFY_EMAIL_BUTTON = (By.XPATH,
                            "(//label[contains(@class, 'vkuiCheckbox vkuiCheckbox--sizeY-none vkuiTappable vkuiInternalTappable vkuiTappable--hasHover vkuiTappable--hasActive vkui-focus-visible')])[1]")

@@ -7,14 +7,15 @@ class SettingsNotificationsPageLocators(BasePageLocators):
     @staticmethod
     def H2_NAME(h2):
         return (By.XPATH, f"//*[contains(@class, 'vkuiTitle--level-2') and text()='{h2}']")
-    
+
     @staticmethod
     def CHECKBOX_NAME(checkbox):
         return (By.XPATH, f"//*[contains(@class, 'Subscriptions_checkboxContent__') and text()='{checkbox}']")
-    
+
     @staticmethod
     def CHECKBOX_NAME_IS_CHECKED_OR_NOT(checkbox, state):
-        return (By.XPATH, f"//*[contains(@class, 'vkuiCheckbox') and .//* [contains(@class, 'Subscriptions_checkboxContent__') and text()='{checkbox}']]//*[contains(@class, 'vkuiCheckbox__icon--{state}')]")
+        return (By.XPATH,
+                f"//*[contains(@class, 'vkuiCheckbox') and .//* [contains(@class, 'Subscriptions_checkboxContent__') and text()='{checkbox}']]//*[contains(@class, 'vkuiCheckbox__icon--{state}')]")
 
     SWITCH_EMAIL_SIGN = (By.XPATH, "//*[contains(@class, 'Emails_item__')]")
     SWITCH_EMAIL_INPUT = (By.XPATH, "//*[contains(@class, 'vkuiSimpleCell')]//label[contains(@class, 'vkuiSwitch')]")

@@ -10,12 +10,12 @@ from ui.pages.base_page import BasePage
 from ui.pages.budget_page import BudgetPage
 from ui.pages.cabinet_page import CabinetPage
 from ui.pages.campaign_page import CampaignPage
-from ui.pages.guide_page import GuidePage
 from ui.pages.cases_page import CasesPage
 from ui.pages.center_commerce_page import CenterCommercePage
 from ui.pages.create_campaign_page import CreateCampaignPage
 from ui.pages.forum_page import ForumsPage
 from ui.pages.guide_no_reg_page import GuideNoRegPage
+from ui.pages.guide_page import GuidePage
 from ui.pages.lead_forms_page import LeadFormsPage
 from ui.pages.main_page import MainPage
 from ui.pages.navbar_no_reg import NavbarNoReg
@@ -34,12 +34,14 @@ from ui.verification.commerce_center_verification import CommerceCenterVerificat
 from ui.verification.create_campaign_page_verification import CreateCampaignPageVerification
 from ui.verification.footer_verification import FooterVerification
 from ui.verification.forum_page_verification import ForumPageVerification
+from ui.verification.guide_page_verification import GuidePageVerification
 from ui.verification.main_page_verification import MainPageVerification
 from ui.verification.partner_page_verification import PartnerPageVerification
+from ui.verification.pixels_page_verification import PixelsPageVerification
+from ui.verification.settings_access_page_verification import SettingsAccessPageVerification
 from ui.verification.settings_common_page_verification import SettingsCommonPageVerification
 from ui.verification.settings_notifications_page_verification import SettingsNotificationsPageVerification
 from ui.verification.survey_page_verification import SurveysPageVerification
-from ui.verification.settings_access_page_verification import SettingsAccessPageVerification
 
 
 @pytest.fixture()
@@ -117,6 +119,7 @@ def settings_notifications_page(driver, cabinet_page):
 def guide_page(driver, cabinet_page):
     driver.get(GuidePage.url)
     return GuidePage(driver=driver)
+
 
 @pytest.fixture
 def pixels_page(driver, cabinet_page):
@@ -238,6 +241,41 @@ def settings_common_page_verification(settings_common_page):
 @pytest.fixture
 def settings_access_page_verification(settings_access_page):
     return SettingsAccessPageVerification(settings_access_page)
+
+
+@pytest.fixture
+def surveys_page_verification(surveys_page):
+    return SurveysPageVerification(surveys_page)
+
+
+@pytest.fixture
+def cases_page_verification(cases_page):
+    return CasesPageVerification(cases_page)
+
+
+@pytest.fixture
+def settings_notifications_page_verification(settings_notifications_page):
+    return SettingsNotificationsPageVerification(settings_notifications_page)
+
+
+@pytest.fixture
+def settings_common_page_verification(settings_common_page):
+    return SettingsCommonPageVerification(settings_common_page)
+
+
+@pytest.fixture
+def settings_access_page_verification(settings_access_page):
+    return SettingsAccessPageVerification(settings_access_page)
+
+
+@pytest.fixture
+def pixels_page_verification(pixels_page):
+    return PixelsPageVerification(pixels_page)
+
+
+@pytest.fixture
+def guide_page_verification(guide_page):
+    return GuidePageVerification(guide_page)
 
 
 @pytest.fixture

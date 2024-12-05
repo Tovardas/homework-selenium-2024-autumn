@@ -1,5 +1,5 @@
-from ui.pages.base_page import BasePage
 from ui.locators.forum_page_locators import ForumsPageLocators
+from ui.pages.base_page import BasePage
 
 
 class ForumsPage(BasePage):

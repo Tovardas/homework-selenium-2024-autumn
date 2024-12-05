@@ -1,8 +1,9 @@
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from ui.pages.base_page import BasePage
-from ui.locators.auth_page_locators import AuthPageLocators
 import time
+
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from ui.locators.auth_page_locators import AuthPageLocators
+from ui.pages.base_page import BasePage
 
 
 class AuthPage(BasePage):

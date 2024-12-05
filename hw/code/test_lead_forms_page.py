@@ -1,6 +1,5 @@
 import os
-import pytest
-import time
+
 from base_case import BaseCase
 
 LEADFORM_NAME = 'Запись на тестовый урок'
@@ -28,6 +27,7 @@ ADDRESS = 'г.Москва, ул.Никитина, д.1, кв.600'
 EMAIL = 'petrov@easyenglish.ru'
 INN = '3663065397'
 
+
 class TestLeadFormsPage(BaseCase):
     def test_upload_image(self, leadforms_page):
         leadforms_page.click_create_leadform_button()
@@ -46,7 +46,7 @@ class TestLeadFormsPage(BaseCase):
     def test_1_compact_max_length(self, leadforms_page):
         leadforms_page.click_create_leadform_button()
 
-        leadforms_page.fill_1_compact_all_data('a'*256, 'a'*31, 'a'*51, 'a'*36)
+        leadforms_page.fill_1_compact_all_data('a' * 256, 'a' * 31, 'a' * 51, 'a' * 36)
         leadforms_page.continue_1()
         leadforms_page.check_errors_1_compact_all('Превышена максимальная длина поля')
 
@@ -62,7 +62,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
 
         leadforms_page.click_1_more_text()
-        leadforms_page.fill_1_more_text_data('a'*351)
+        leadforms_page.fill_1_more_text_data('a' * 351)
         leadforms_page.continue_1()
         leadforms_page.check_empty_1_more_text('Превышена максимальная длина поля')
 
@@ -71,25 +71,25 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.click_1_magnet()
         leadforms_page.click_1_magnet_bonus()
-        
+
         leadforms_page.empty_1_magnet_bonus()
         leadforms_page.continue_1()
         leadforms_page.check_empty_1_magnet_bonus('Обязательное поле')
-        
-        leadforms_page.fill_1_magnet_bonus('a'*31)
+
+        leadforms_page.fill_1_magnet_bonus('a' * 31)
         leadforms_page.continue_1()
         leadforms_page.check_error_1_magnet_bonus('Превышена максимальная длина поля')
-  
+
     def test_1_magnet_sale_errors(self, leadforms_page):
         leadforms_page.click_create_leadform_button()
 
         leadforms_page.click_1_magnet()
         leadforms_page.click_1_magnet_sale()
-        
+
         leadforms_page.fill_1_magnet_sale(0)
         leadforms_page.continue_1()
         leadforms_page.check_zero_1_magnet_sale('Значение должно быть больше нуля')
-        
+
         leadforms_page.click_1_magnet_sale_percent()
         leadforms_page.fill_1_magnet_sale(101)
         leadforms_page.continue_1()
@@ -106,11 +106,11 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.continue_1()
         leadforms_page.check_question_2_error('Вопрос должен быть не пустым и содержать минимум 2 ответа')
 
-        leadforms_page.fill_2_question('a'*3)
+        leadforms_page.fill_2_question('a' * 3)
         leadforms_page.continue_1()
         leadforms_page.check_question_2_error('Вопрос должен быть не пустым и содержать минимум 2 ответа')
 
-        leadforms_page.fill_2_answer_1('a'*3)
+        leadforms_page.fill_2_answer_1('a' * 3)
         leadforms_page.continue_1()
         leadforms_page.check_question_2_error('Вопрос должен быть не пустым и содержать минимум 2 ответа')
 
@@ -137,8 +137,8 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.continue_1()
         leadforms_page.check_empty_3_heading('Обязательное поле')
 
-        leadforms_page.fill_3_header('a'*26)
-        leadforms_page.fill_3_description('a'*161)
+        leadforms_page.fill_3_header('a' * 26)
+        leadforms_page.fill_3_description('a' * 161)
         leadforms_page.continue_1()
         leadforms_page.check_errors_3_heading('Превышена максимальная длина поля')
 
@@ -156,7 +156,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_3_site('a')
         leadforms_page.fill_3_phone('a')
-        leadforms_page.fill_3_promocode('a'*31)
+        leadforms_page.fill_3_promocode('a' * 31)
         leadforms_page.continue_1()
         leadforms_page.check_errors_3_site('Невалидный url')
         leadforms_page.check_errors_3_phone('Телефон должен начинаться с + и содержать только цифры')
@@ -176,9 +176,9 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.continue_1()
         leadforms_page.check_4_errors_empty('Обязательное поле')
 
-        leadforms_page.fill_4_name('a'*256)
-        leadforms_page.fill_4_address('a'*256)
-        leadforms_page.fill_4_inn('a'*33)
+        leadforms_page.fill_4_name('a' * 256)
+        leadforms_page.fill_4_address('a' * 256)
+        leadforms_page.fill_4_inn('a' * 33)
         leadforms_page.continue_1()
         leadforms_page.check_4_errors_empty('Превышена максимальная длина поля')
 

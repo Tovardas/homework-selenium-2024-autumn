@@ -1,6 +1,7 @@
+import allure
+
 from base_case import BaseCase
 from ui.fixtures import partner_page
-import allure
 
 
 class TestPartnerPage(BaseCase):

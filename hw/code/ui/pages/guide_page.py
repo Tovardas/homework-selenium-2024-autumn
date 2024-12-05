@@ -1,10 +1,8 @@
-import time
-
-from ui.pages.base_page import BasePage
-from ui.locators.guide_page_locators import GuidePageLocators
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
+from ui.locators.guide_page_locators import GuidePageLocators
+from ui.pages.base_page import BasePage
+
 
 class GuidePage(BasePage):
     url = 'https://ads.vk.com/hq/overview'
@@ -65,4 +63,3 @@ class GuidePage(BasePage):
 
     def video_is_displayed(self) -> bool:
         return self.is_element_displayed(self.locators.PIXEL_VIDEO_ELEMENT)
-

@@ -1,15 +1,10 @@
-import pytest
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver import Keys
-from selenium.webdriver.support import expected_conditions as EC
 from base_case import BaseCase
-import time
+
 
 class TestGuideNoRegPage(BaseCase):
     def test_href_to_materials(self, guide_no_reg_page):
         guide_no_reg_page.click_materials_button()
         assert self.is_opened('https://ads.vk.com/insights')
-
 
     def test_href_to_events(self, guide_no_reg_page):
         guide_no_reg_page.click_events_button()
@@ -57,18 +52,12 @@ class TestGuideNoRegPage(BaseCase):
         guide_no_reg_page.click_pagination_left()
         assert self.query_parameter_matches('p', 3)
 
-
-
     def test_events_card_old(self, guide_no_reg_page):
         guide_no_reg_page.click_events_button()
         guide_no_reg_page.click_events_card_old()
         assert self.is_opened('https://ads.vk.com/events/moderation-rules-webinar')
-        #assert guide_no_reg_page.event_contains_video()
 
     def test_events_card_new(self, guide_no_reg_page):
         guide_no_reg_page.click_events_button()
         guide_no_reg_page.click_events_card_new()
         assert self.is_opened('https://ads.vk.com/events/prodvizhenie-novogodnie-prazdniki-vebinar-0512')
-
-
-

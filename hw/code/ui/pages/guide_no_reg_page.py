@@ -1,12 +1,5 @@
-from selenium.webdriver.ie.webdriver import WebDriver
-from ui.pages.base_page import BasePage
-from selenium.webdriver import Keys
 from ui.locators.guide_no_reg_page_locators import GuideNoRegPageLocators
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support import expected_conditions as EC
-
+from ui.pages.base_page import BasePage
 
 
 class GuideNoRegPage(BasePage):
@@ -33,7 +26,6 @@ class GuideNoRegPage(BasePage):
 
     def click_materials_tag(self):
         self.click(self.locators.MATERIALS_TAG)
-
 
     def click_materials_content(self):
         self.scroll_and_click(self.locators.MATERIALS_CONTENT_LINK)
@@ -62,5 +54,3 @@ class GuideNoRegPage(BasePage):
 
     def click_events_card_new(self):
         self.scroll_and_click(self.locators.EVENTS_CARD_NEW)
-
-

@@ -1,11 +1,5 @@
-from ui.pages.base_page import BasePage
-from selenium.webdriver import Keys
 from ui.locators.navbar_no_reg_locators import NavbarNoRegLocators
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from ui.pages.base_page import BasePage
 
 
 class NavbarNoReg(BasePage):

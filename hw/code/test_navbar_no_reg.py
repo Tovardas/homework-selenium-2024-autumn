@@ -1,8 +1,7 @@
-import pytest
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver import Keys
-from selenium.webdriver.support import expected_conditions as EC
+
 from base_case import BaseCase
+
 
 class TestNavbarNoReg(BaseCase):
     def test_href_to_news(self, navbar_no_reg):

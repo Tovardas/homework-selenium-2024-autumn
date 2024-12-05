@@ -25,7 +25,6 @@ class CampaignVerification:
         assert self.campaign_page.create_footer_became_visible()
         assert self.campaign_page.has_create_footer_continue_button_content()
 
-
     def check_group_creation_url(self):
         assert self.campaign_page.name_sign_became_visible()
 

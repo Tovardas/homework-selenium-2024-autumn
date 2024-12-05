@@ -1,12 +1,13 @@
 import time
 
-from ui.pages.base_page import BasePage
 from ui.locators.main_page_locators import MainPageLocators
+from ui.pages.base_page import BasePage
 
 
 class MainPage(BasePage):
     locators = MainPageLocators()
     url = 'https://ads.vk.com/'
+
     def click_vk_ads_logo(self):
         self.click(self.locators.VK_ADS_LOGO)
 
@@ -60,7 +61,6 @@ class MainPage(BasePage):
         self.click(self.locators.CASE_ITEM)
 
     def get_case_title(self) -> str:
-        time.sleep(1)
         return self.find(self.locators.CASE_ITEM_TITLE).text
 
     def get_title(self) -> str:

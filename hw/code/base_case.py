@@ -1,9 +1,9 @@
-import pytest
+from urllib.parse import urlparse, parse_qs
 
-from ui.pages.base_page import PageNotOpenedException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from urllib.parse import urlparse, parse_qs
+
+from ui.pages.base_page import PageNotOpenedException
 
 
 class BaseCase:

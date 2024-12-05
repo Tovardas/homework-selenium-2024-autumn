@@ -51,7 +51,7 @@ class MainPageLocators(BasePageLocators):
     @staticmethod
     def SLIDER_BUTTON(url):
         return By.XPATH, f"//a[contains(@class, 'MainSlider_button__') and contains(@href, '{url}')]"
-    
+
     SEE_ALL_LINK = (By.XPATH, "//a[contains(text(), 'Смотреть все')]")
     CASE_ITEM = (By.XPATH, "//a[contains(@class, 'Case_link__')]")
     CASE_ITEM_TITLE = (By.XPATH, "//div[contains(@class, 'Case_title__')]")

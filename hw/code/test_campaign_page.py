@@ -1,4 +1,5 @@
 import allure
+
 from base_case import BaseCase
 
 

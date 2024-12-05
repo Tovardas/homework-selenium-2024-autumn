@@ -1,7 +1,6 @@
 from selenium.common import TimeoutException
-
-from ui.pages.base_page import BasePage
 from ui.locators.partner_page_locators import PartnerPageLocators
+from ui.pages.base_page import BasePage
 
 
 class PartnerPage(BasePage):

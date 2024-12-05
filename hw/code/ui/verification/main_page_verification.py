@@ -9,6 +9,4 @@ class MainPageVerification:
         assert self.main_page.driver.current_url == expected_url
 
     def check_case_title_in_page(self, case_title):
-        print(case_title)
-        print(self.main_page.get_title())
         assert case_title in self.main_page.get_title()

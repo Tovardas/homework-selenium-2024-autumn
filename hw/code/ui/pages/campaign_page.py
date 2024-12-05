@@ -1,6 +1,6 @@
-from ui.pages.base_page import BasePage
 from ui.locators.campaign_page_locators import CampaignPageLocators
-import time
+from ui.pages.base_page import BasePage
+
 
 class CampaignPage(BasePage):
     url = 'https://ads.vk.com/hq/dashboard/ad_plans'
@@ -10,9 +10,11 @@ class CampaignPage(BasePage):
                                 'Группа и профиль ОК', 'Дзен', 'Лид-формы и опросы', 'VK Mini Apps и игры', 'Музыка',
                                 'Видео и трансляции']
 
-    RECOGNITION_TABS_CONTENT_LIST = ['Баннерная реклама', 'Видеореклама', 'Реклама в Дзене', 'HTML5 баннер', 'Премиальное размещение']
+    RECOGNITION_TABS_CONTENT_LIST = ['Баннерная реклама', 'Видеореклама', 'Реклама в Дзене', 'HTML5 баннер',
+                                     'Премиальное размещение']
 
-    SECTION_NAME_LIST = ['Регионы показа', 'Демография', 'Интересы и поведение', 'Устройства', 'Аудитории',  'Параметры URL', 'Места размещения']
+    SECTION_NAME_LIST = ['Регионы показа', 'Демография', 'Интересы и поведение', 'Устройства', 'Аудитории',
+                         'Параметры URL', 'Места размещения']
 
     REGION_BUTTON_NAME_LIST = ['Россия', 'Москва', 'Санкт-Петербург']
 

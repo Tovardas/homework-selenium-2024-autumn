@@ -1,13 +1,14 @@
 from selenium.webdriver.common.by import By
 from ui.locators.base_page_locators import BasePageLocators
 
+
 class GuidePageLocators(BasePageLocators):
     GUIDE_BUTTON = (
         By.XPATH,
         "(//*[text()='Пройти обучение'])"
     )
 
-    HELP_AND_GUIDE =  (By.XPATH, "//div[@data-testid='help-menu-container']//div[@role='button' and @data-route='help']")
+    HELP_AND_GUIDE = (By.XPATH, "//div[@data-testid='help-menu-container']//div[@role='button' and @data-route='help']")
 
     GUIDE_CLOSE_BUTTON = (
         By.CLASS_NAME,
@@ -15,16 +16,16 @@ class GuidePageLocators(BasePageLocators):
     )
 
     GUIDE_MODAL = (
-        By.CLASS_NAME, 
+        By.CLASS_NAME,
         "ModalRoot_componentWrapper__uzHTL"
     )
 
     INNER_MODAL = (
-        By.CLASS_NAME, 
+        By.CLASS_NAME,
         "SelectOnboardingModal_root__wPDGY"
     )
     COMMUNITY_BUTTON = (
-        By.XPATH, 
+        By.XPATH,
         "//*[text()='Сообщество ВКонтакте']"
     )
 
@@ -68,24 +69,23 @@ class GuidePageLocators(BasePageLocators):
         "//*[text()='Дзен']"
     )
 
-
     CAMPAIGN_MODAL_BUTTON = (
-        By.XPATH, 
+        By.XPATH,
         "//*[text()='Настроить кампанию с подсказками']"
     )
 
     CAMPAIGN_BUTTON = (
-        By.XPATH, 
+        By.XPATH,
         "//*[text()='Создать кампанию']"
     )
 
     PIXEL_VIDEO_BUTTON = (
-        By.XPATH, 
+        By.XPATH,
         "//*[text()='Смотреть видеоурок от экспертов VK']"
     )
 
     PIXEL_PLATFORM_BUTTON = (
-        By.XPATH, 
+        By.XPATH,
         "//*[text()='Смотреть курс на обучающей платформе']"
     )
 

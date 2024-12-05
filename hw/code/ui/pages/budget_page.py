@@ -1,6 +1,6 @@
-from ui.pages.base_page import BasePage
 from ui.locators.budget_page_locators import BudgetPageLocators
-import time
+from ui.pages.base_page import BasePage
+
 
 class BudgetPage(BasePage):
     url = "https://ads.vk.com/hq/budget/transactions"

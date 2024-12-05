@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from ui.locators.base_page_locators import BasePageLocators
-
 class AudiencePageLocators(BasePageLocators):
     CREATE_AUDIENCE_BUTTON = (By.XPATH, "//*[contains(@class, 'vkuiButton__content') and text()='Создать аудиторию']")
     AUDIENCE_CREATE_MODAL = (By.CLASS_NAME, "ModalSidebarPage_container__Zopae")
@@ -11,15 +10,17 @@ class AudiencePageLocators(BasePageLocators):
     )
 
     ERROR = (By.XPATH, "//*[@role='alert']")
-    AUDIENCE_ADD_SOURCE_BUTTON = (By.XPATH, "//*[contains(@class, 'vkuiButton__content') and text()='Добавить источник']")
+    AUDIENCE_ADD_SOURCE_BUTTON = (
+    By.XPATH, "//*[contains(@class, 'vkuiButton__content') and text()='Добавить источник']")
     AUDIENCE_SOURCE_MODAL = (By.XPATH, "//*[text()='Включить источник']")
 
     AUDIENCE_SOURCE_PHRASE_BUTTON = (By.XPATH, "//*[text()='Ключевые фразы']")
-    AUDIENCE_SOURCE_NAME_INPUT = (By.XPATH, "//h5[contains(@class, 'vkuiTypography') and text()='Название']/following-sibling::span//input[@type='text']")
+    AUDIENCE_SOURCE_NAME_INPUT = (By.XPATH,
+                                  "//h5[contains(@class, 'vkuiTypography') and text()='Название']/following-sibling::span//input[@type='text']")
     AUDIENCE_SOURCE_PHRASE_INPUT = (By.XPATH, "//*[@placeholder='Введите фразу и нажмите Enter']")
 
     AUDIENCE_NAME_INPUT = (
-        By.XPATH, 
+        By.XPATH,
         "//input[contains(@class, 'vkuiInput__el')]"
     )
 
@@ -30,9 +31,9 @@ class AudiencePageLocators(BasePageLocators):
     @staticmethod
     def SOURCE_ITEM(item_name):
         return By.XPATH, f"//*[contains(@class, 'vkuiTypography vkuiTypography--normalize vkuiTypography--weight-3 vkuiSimpleCell__children vkuiHeadline--sizeY-none vkuiHeadline--level-1') and text()='{item_name}']"
-    
+
     ADD_SOURCE_BUTTON = (
-        By.XPATH, 
+        By.XPATH,
         "//*[contains(@class, 'vkuiButton__content') and text()='Добавить источник']"
     )
 
@@ -42,12 +43,12 @@ class AudiencePageLocators(BasePageLocators):
     )
 
     SIDEBAR_SIGN = (
-        By.XPATH, 
+        By.XPATH,
         "//*[contains(@class, 'vkuiTypography') and text()='Добавить пользователей, которые соответствуют']"
     )
 
     SIDEBAR_SIGN_HINTS = (
-        By.XPATH, 
+        By.XPATH,
         "//*[contains(@class, 'HintSelector_hintSelectorButton__') and text()='хотя бы одному из условий']"
     )
 

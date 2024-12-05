@@ -1,10 +1,8 @@
-from ui.pages.base_page import BasePage
 from ui.locators.cabinet_page_locators import CabinetPageLocators
+from ui.pages.base_page import BasePage
 
 
 class CabinetPage(BasePage):
-
-    #obzor
     url = 'https://ads.vk.com/hq/overview'
     locators = CabinetPageLocators()
 

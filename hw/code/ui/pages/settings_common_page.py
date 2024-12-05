@@ -1,7 +1,9 @@
-from selenium.webdriver import Keys
-from ui.pages.base_page import BasePage
-from ui.locators.settings_common_page_locators import SettingsCommonPageLocators
 import time
+
+from selenium.webdriver import Keys
+from ui.locators.settings_common_page_locators import SettingsCommonPageLocators
+from ui.pages.base_page import BasePage
+
 
 class SettingsCommonPage(BasePage):
     url = 'https://ads.vk.com/hq/settings'
@@ -14,10 +16,12 @@ class SettingsCommonPage(BasePage):
     ERROR_INVALID_INN = 'Некорректный ИНН'
 
     def inputs_became_visible(self):
-        return self.became_visible(self.locators.PHONE_NUMBER_INPUT) and self.became_visible(self.locators.FULL_NAME_INPUT) and self.became_visible(self.locators.INN_INPUT)
-    
+        return self.became_visible(self.locators.PHONE_NUMBER_INPUT) and self.became_visible(
+            self.locators.FULL_NAME_INPUT) and self.became_visible(self.locators.INN_INPUT)
+
     def buttons_became_visible(self):
-        return self.became_visible(self.locators.ADD_EMAIL_BUTTON) and self.became_visible(self.locators.DELETE_CABINET_BUTTON) and self.became_visible(self.locators.LOGOUT_OTHER_DEVICES_BUTTON)
+        return self.became_visible(self.locators.ADD_EMAIL_BUTTON) and self.became_visible(
+            self.locators.DELETE_CABINET_BUTTON) and self.became_visible(self.locators.LOGOUT_OTHER_DEVICES_BUTTON)
 
     def enter_full_name(self, full_name: str):
         full_name_input = self.find(self.locators.FULL_NAME_INPUT)
@@ -83,6 +87,4 @@ class SettingsCommonPage(BasePage):
         self.click(self.locators.SAVE_BUTTON)
 
     def click_cancel_button(self):
-        time.sleep(1)
         self.click(self.locators.CANCEL_BUTTON)
-        
