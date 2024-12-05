@@ -1,3 +1,4 @@
+from selenium.webdriver.ie.webdriver import WebDriver
 from ui.pages.base_page import BasePage
 from selenium.webdriver import Keys
 from ui.locators.guide_no_reg_page_locators import GuideNoRegPageLocators
@@ -61,3 +62,5 @@ class GuideNoRegPage(BasePage):
 
     def click_events_card_new(self):
         self.scroll_and_click(self.locators.EVENTS_CARD_NEW)
+
+

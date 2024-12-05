@@ -1,3 +1,5 @@
+from time import sleep
+
 from ui.pages.base_page import BasePage
 import time
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,6 +8,7 @@ from ui.locators.pixels_page_locators import PixelsPageLocators
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+
 
 class PixelsPage(BasePage):
     url = 'https://ads.vk.com/hq/pixels'
@@ -94,7 +97,6 @@ class PixelsPage(BasePage):
         self.click(self.locators.PIXEL_RENAME_BUTTON)
         site_rename_field = self.find(self.locators.MODAL_RENAME_PIXEL_FIELD)
         site_rename_field.clear()
-        #clear не очищает поле....
         site_rename_field.send_keys(name)
         self.click(self.locators.PIXEL_RENAME_CONF)
 
@@ -146,3 +148,50 @@ class PixelsPage(BasePage):
 
     def new_tag_is_displayed(self) -> bool:
         return self.is_element_displayed(self.locators.TAG_NAME_ELEMENT)
+
+
+    def click_new_event_button(self):
+        self.click(self.locators.NEW_EVENT_BUTTON)
+
+    def right_side_bar_opened(self) -> bool:
+        return self.is_element_displayed(self.locators.RIGHT_SIDE_BAR)
+
+    def click_new_event_conf_false(self):
+        self.click(self.locators.NEW_EVENT_CONF_FALSE)
+
+    def click_new_event_conf_true(self):
+        self.click(self.locators.NEW_EVENT_CONF_TRUE)
+
+    def enter_event_name(self, name):
+        site_rename_field = self.find(self.locators.EVENT_NAME_FIELD)
+        site_rename_field.clear()
+        site_rename_field.send_keys(name)
+
+    def choose_event_category(self):
+        self.click(self.locators.EVENT_CATEGORY_FIELD)
+        element = self.find(self.locators.EVENT_CATEGORY_FIELD_CONTENT)
+        element.send_keys(Keys.ENTER)
+        element.click()
+
+    def choose_event_requirement_href(self):
+        self.click(self.locators.EVENT_REQUIREMENT_HREF)
+        self.click(self.locators.EVENT_REQUIREMENT_HREF_CONTENT)
+
+    def event_url_field_is_displayed(self):
+        return self.is_element_displayed(self.locators.EVENT_URL_FIELD)
+
+    def enter_event_url_field(self, url):
+        site_rename_field = self.find(self.locators.EVENT_URL_FIELD)
+        site_rename_field.clear()
+        site_rename_field.send_keys(url)
+
+    def click_event_set_value(self):
+        self.click(self.locators.EVENT_SET_VALUE_BUTTON)
+
+    def event_set_value_field_is_displayed(self) -> bool:
+        return self.is_element_displayed(self.locators.EVENT_VALUE_FIELD)
+
+    def enter_event_set_value_field(self, number):
+        site_rename_field = self.find(self.locators.EVENT_VALUE_FIELD)
+        site_rename_field.clear()
+        site_rename_field.send_keys(number)

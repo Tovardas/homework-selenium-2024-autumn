@@ -50,12 +50,13 @@ class TestGuideNoRegPage(BaseCase):
     def test_materials_paginator(self, guide_no_reg_page):
         guide_no_reg_page.click_materials_button()
         assert self.is_opened('https://ads.vk.com/insights')
-        #guide_no_reg_page.click_pagination_number()
-        #assert self.is_opened("https://ads.vk.com/insights?p=3")
-        #guide_no_reg_page.click_pagination_left()
-        # assert self.is_opened("https://ads.vk.com/insights?p=2")
-        #guide_no_reg_page.click_pagination_right()
-        # assert self.is_opened("https://ads.vk.com/insights?p=3")
+        guide_no_reg_page.click_pagination_number()
+        assert self.query_parameter_matches('p', 3)
+        guide_no_reg_page.click_pagination_right()
+        assert self.query_parameter_matches('p', 4)
+        guide_no_reg_page.click_pagination_left()
+        assert self.query_parameter_matches('p', 3)
+
 
 
     def test_events_card_old(self, guide_no_reg_page):

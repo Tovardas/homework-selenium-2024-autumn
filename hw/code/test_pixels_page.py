@@ -15,6 +15,8 @@ class TestPixelsPage(BaseCase):
     INCORRECT_EMAIL = "notCorrectSobakaTochkaRu"
     NEW_NAME = "New Pixel Testing Name"
     TAG_NAME = "testing"
+    EVENT_NAME = "testing event"
+    URL_CONTAINS = "test/number"
 
     def test_open_catalog_modal(self, pixels_page):
         pixels_page.click_pixel_button()
@@ -50,19 +52,18 @@ class TestPixelsPage(BaseCase):
         pixels_page.close_pixel_creation_success()
         pixels_page.delete_pixel_false()
         pixels_page.delete_pixel_true()
-        #Пиксель удаляется, но не совсем понимаю, какой ассерт лучше вставить, так как уведомления об удалении нет
 
     def test_rename_pixel(self, pixels_page):
-        pixels_page.click_pixel_button()
-        pixels_page.enter_pixel_domain(self.CORRECT_DOMAIN)
-        pixels_page.click_add_pixel_button()
-        pixels_page.click_create_new_pixel_conf()
-        assert pixels_page.pixel_creation_success()
-        pixels_page.close_pixel_creation_success()
+        #pixels_page.click_pixel_button()
+        #pixels_page.enter_pixel_domain(self.CORRECT_DOMAIN)
+        #pixels_page.click_add_pixel_button()
+        #pixels_page.click_create_new_pixel_conf()
+        #assert pixels_page.pixel_creation_success()
+        #pixels_page.close_pixel_creation_success()
         pixels_page.rename_pixel_false()
         pixels_page.rename_pixel_true(self.NEW_NAME)
         pixels_page.delete_pixel_false()
-        pixels_page.delete_pixel_true()
+        #pixels_page.delete_pixel_true()
 
 
     def test_options_code_pixel(self, pixels_page):
@@ -124,7 +125,99 @@ class TestPixelsPage(BaseCase):
         #pixels_page.delete_pixel_true()
 
 
+    def test_options_events_href(self, pixels_page):
+        #pixels_page.click_pixel_button()
+        #pixels_page.enter_pixel_domain(self.CORRECT_DOMAIN)
+        #pixels_page.click_add_pixel_button()
+        #pixels_page.click_create_new_pixel_conf()
+        #assert pixels_page.pixel_creation_success()
+        #pixels_page.close_pixel_creation_success()
+        #Создание пикселя, законменчено, так как исчерпан лимит АПИ
+
+        pixels_page.click_options()
+
+        pixels_page.click_new_event_button()
+        assert pixels_page.right_side_bar_opened()
+        pixels_page.click_new_event_conf_false()
+
+        pixels_page.click_new_event_button()
+        assert pixels_page.right_side_bar_opened()
+
+        pixels_page.enter_event_name(self.EVENT_NAME)
+
+        #Далее нужно выбирать из селект списка, но ни один из вариантов выбора из селект списка не работает
+        #pixels_page.choose_event_category()
+        #pixels_page.choose_event_requirement_href()
+        #assert pixels_page.event_url_field_is_displayed()
+
+        #pixels_page.enter_event_url_field(self.URL_CONTAINS)
+
+        #pixels_page.click_event_set_value()
+        #assert pixels_page.event_set_value_field_is_displayed()
+        #pixels_page.enter_event_set_value_field(self.FIRST_VALUE)
+        #pixels_page.click_new_event_conf_true()
+
+    def test_options_events_with_time_period(self, pixels_page):
+        #pixels_page.click_pixel_button()
+        #pixels_page.enter_pixel_domain(self.CORRECT_DOMAIN)
+        #pixels_page.click_add_pixel_button()
+        #pixels_page.click_create_new_pixel_conf()
+        #assert pixels_page.pixel_creation_success()
+        #pixels_page.close_pixel_creation_success()
+
+        pixels_page.click_options()
+
+        pixels_page.click_new_event_button()
+        assert pixels_page.right_side_bar_opened()
+        pixels_page.click_new_event_conf_false()
+
+        pixels_page.click_new_event_button()
+        assert pixels_page.right_side_bar_opened()
+
+        pixels_page.enter_event_name(self.EVENT_NAME)
+
+        #Далее нужно выбирать из селект списка, но ни один из вариантов выбора из селект списка не работает
+        #pixels_page.choose_event_category()
+        #pixels_page.choose_event_requirement_with_time_period()
+        #assert pixels_page.event_time_period_field_is_displayed()
+        #assert pixels_page.event_amount_field_is_displayed()
+
+        #pixels_page.enter_event_time_period()
+        #pixels_page.enter_event_amount(self.FIRST_VALUE)
+
+        #pixels_page.click_event_set_value()
+        #assert pixels_page.event_set_value_field_is_displayed()
+        #pixels_page.enter_event_set_value_field(self.FIRST_VALUE)
+        #pixels_page.click_new_event_conf_true()
 
 
+    def test_options_events_js(self, pixels_page):
+        #pixels_page.click_pixel_button()
+        #pixels_page.enter_pixel_domain(self.CORRECT_DOMAIN)
+        #pixels_page.click_add_pixel_button()
+        #pixels_page.click_create_new_pixel_conf()
+        #assert pixels_page.pixel_creation_success()
+        #pixels_page.close_pixel_creation_success()
 
-    #Осталось - Настройки(События)
+        pixels_page.click_options()
+
+        pixels_page.click_new_event_button()
+        assert pixels_page.right_side_bar_opened()
+        pixels_page.click_new_event_conf_false()
+
+        pixels_page.click_new_event_button()
+        assert pixels_page.right_side_bar_opened()
+
+        pixels_page.enter_event_name(self.EVENT_NAME)
+        #Далее нужно выбирать из селект списка, но ни один из вариантов выбора из селект списка не работает
+        #pixels_page.choose_event_category()
+        #pixels_page.choose_event_requirement_js()
+        #assert pixels_page.event_js_field_is_displayed()
+
+        #pixels_page.enter_event_js_field(self.EVENT_NAME)
+        #pixels_page.click_event_set_value()
+        #assert pixels_page.event_set_value_field_is_displayed()
+        #pixels_page.enter_event_set_value_field(self.FIRST_VALUE)
+        #pixels_page.click_new_event_conf_true()
+
+
