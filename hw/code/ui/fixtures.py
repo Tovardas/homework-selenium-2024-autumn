@@ -10,7 +10,7 @@ from ui.pages.base_page import BasePage
 from ui.pages.budget_page import BudgetPage
 from ui.pages.cabinet_page import CabinetPage
 from ui.pages.campaign_page import CampaignPage
-# from ui.pages.guide_page import GuidePage
+from ui.pages.guide_page import GuidePage
 from ui.pages.cases_page import CasesPage
 from ui.pages.center_commerce_page import CenterCommercePage
 from ui.pages.create_campaign_page import CreateCampaignPage
@@ -29,12 +29,17 @@ from ui.pages.surveys_page import SurveysPage
 from ui.verification.audience_page_verification import AudiencePageVerification
 from ui.verification.budget_page_verification import BudgetPageVerification
 from ui.verification.campaign_page_verification import CampaignVerification
+from ui.verification.cases_page_verification import CasesPageVerification
 from ui.verification.commerce_center_verification import CommerceCenterVerification
 from ui.verification.create_campaign_page_verification import CreateCampaignPageVerification
 from ui.verification.footer_verification import FooterVerification
+from ui.verification.forum_page_verification import ForumPageVerification
 from ui.verification.main_page_verification import MainPageVerification
 from ui.verification.partner_page_verification import PartnerPageVerification
-from ui.verification.forum_page_verification import ForumPageVerification
+from ui.verification.settings_common_page_verification import SettingsCommonPageVerification
+from ui.verification.settings_notifications_page_verification import SettingsNotificationsPageVerification
+from ui.verification.survey_page_verification import SurveysPageVerification
+from ui.verification.settings_access_page_verification import SettingsAccessPageVerification
 
 
 @pytest.fixture()
@@ -108,10 +113,10 @@ def settings_notifications_page(driver, cabinet_page):
     return SettingsNotificationsPage(driver=driver)
 
 
-# @pytest.fixture
-# def guide_page(driver, cabinet_page):
-#     driver.get(GuidePage.url)
-#     return GuidePage(driver=driver)
+@pytest.fixture
+def guide_page(driver, cabinet_page):
+    driver.get(GuidePage.url)
+    return GuidePage(driver=driver)
 
 @pytest.fixture
 def pixels_page(driver, cabinet_page):
@@ -204,9 +209,35 @@ def main_page_verification(main_page):
 def partner_page_verification(partner_page):
     return PartnerPageVerification(partner_page)
 
+
 @pytest.fixture
 def forum_page_verification(forum_page):
     return ForumPageVerification(forum_page)
+
+
+@pytest.fixture
+def surveys_page_verification(surveys_page):
+    return SurveysPageVerification(surveys_page)
+
+
+@pytest.fixture
+def cases_page_verification(cases_page):
+    return CasesPageVerification(cases_page)
+
+
+@pytest.fixture
+def settings_notifications_page_verification(settings_notifications_page):
+    return SettingsNotificationsPageVerification(settings_notifications_page)
+
+
+@pytest.fixture
+def settings_common_page_verification(settings_common_page):
+    return SettingsCommonPageVerification(settings_common_page)
+
+
+@pytest.fixture
+def settings_access_page_verification(settings_access_page):
+    return SettingsAccessPageVerification(settings_access_page)
 
 
 @pytest.fixture
