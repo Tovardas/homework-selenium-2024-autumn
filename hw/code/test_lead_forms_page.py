@@ -1,11 +1,13 @@
 import os
 import pytest
 import time
+from ui.locators.lead_forms_locators import LeadFormsPageLocators
 from base_case import BaseCase
 
 FILEPATH = os.path.join(os.path.dirname(__file__), 'images/360.jpg')
 
 class TestLeadFormsPage(BaseCase):
+    locators = LeadFormsPageLocators()
 
 # ======= Положительные кейсы =======
 

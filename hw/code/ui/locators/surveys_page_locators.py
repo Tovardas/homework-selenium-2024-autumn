@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from ui.locators.base_page_locators import BasePageLocators
 
-
 class SurveysPageLocators(BasePageLocators):
     CREATE_SURVEY_BUTTON = (By.XPATH, "//*[text()='Создать опрос']")
     SURVEY_CREATE_MODAL = (By.CLASS_NAME, "ModalSidebarPage_container__Zopae")
@@ -12,7 +11,7 @@ class SurveysPageLocators(BasePageLocators):
     SURVEY_COMPANY_NAME_INPUT = (By.XPATH, "//input[@placeholder='Введите название компании']")
     SURVEY_TITLE_INPUT = (By.XPATH, "//input[@placeholder='Введите заголовок']")
     SURVEY_DESCRIPTION_INPUT = (By.XPATH, "//textarea[@placeholder='Введите описание опроса']")
-
+    
     QUESTIONS_BUTTON = (By.XPATH, "(//*[text()='Вопросы'])")
 
     QUESTION_LIST = (By.XPATH, "//*[@class='Question_question__vRl-h']")
@@ -43,6 +42,10 @@ class SurveysPageLocators(BasePageLocators):
     QUESTION_TITLE_INPUT = (By.XPATH, "//textarea[@placeholder='Текст вопроса']")
     ANSWER_1_INPUT = (By.XPATH, "(//input[@placeholder='Введите ответ'])[1]")
     ANSWER_2_INPUT = (By.XPATH, "(//input[@placeholder='Введите ответ'])[2]")
+    ANSWER_3_INPUT = (By.XPATH, "(//input[@placeholder='Введите ответ'])[3]")
+
+    ADD_ANSWER_BUTTON = (By.XPATH, "//span[contains(text(), 'Добавить вариант')]")
+    ADD_QUESTION_BUTTON = (By.XPATH, "//span[contains(text(), 'Добавить вопрос')]")
 
     SELECTOR_INPUT = (By.XPATH, "//div[contains(@class, 'HintSelector_hintSelectorButton__pfubH')]")
     SELECTOR_MANY = (By.XPATH, "//span[contains(text(), 'Несколько из списка')]")
@@ -58,10 +61,14 @@ class SurveysPageLocators(BasePageLocators):
     ADD_LINK_BUTTON = (By.XPATH, "//span[contains(text(), 'Добавить ссылку')]")
 
     HEADER_3 = (By.XPATH, "//input[@placeholder='Введите заголовок']")
-    DESCRIPTION_3 = (
-    By.XPATH, "//input[@placeholder='Введите описание: например, поблагодарите за прохождение опроса']")
+    DESCRIPTION_3 = (By.XPATH, "//input[@placeholder='Введите описание: например, поблагодарите за прохождение опроса']")
     LINK_3 = (By.XPATH, "//input[@placeholder='Введите ссылку']")
 
     ERROR_3_HEADER = (By.XPATH, "(//span[contains(@role, 'alert')])[1]")
     ERROR_3_DESCRIPTION = (By.XPATH, "(//span[contains(@role, 'alert')])[2]")
     ERROR_3_LINK = (By.XPATH, "(//span[contains(@role, 'alert')])[1]")
+
+    ARCHIVE_BUTTON = (By.XPATH, "//span[contains(text(), 'Архивировать')]")
+    ARCHIVE_ACCEPT_BUTTON = (By.XPATH, "//span[contains(text(), 'Архивировать')]")
+
+    FIRST_SURVAY_NAME = (By.XPATH, "(//h5[contains(@data-testid, 'lead_form_name__')])[1]")
