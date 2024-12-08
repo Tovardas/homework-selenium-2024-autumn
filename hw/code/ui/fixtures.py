@@ -14,9 +14,6 @@ from ui.pages.lead_forms_page import LeadFormsPage
 from ui.pages.surveys_page import SurveysPage
 from ui.pages.registration_page import RegistrationPage
 from ui.pages.settings_common_page import SettingsCommonPage
-from ui.verification.audience_page_verification import AudiencePageVerification
-from ui.verification.survey_page_verification import SurveysPageVerification
-
 
 @pytest.fixture()
 def driver(config):
@@ -95,54 +92,6 @@ def audience_page(driver, cabinet_page):
 def create_campaign_page(driver, cabinet_page):
     driver.get(CreateCampaignPage.url)
     return CreateCampaignPage(driver=driver)
-
-
-
-
-@pytest.fixture
-def audience_page_verification(audience_page):
-    return AudiencePageVerification(audience_page)
-
-
-
-
-@pytest.fixture
-def campaign_verification(campaign_page):
-    return CampaignVerification(campaign_page)
-
-
-
-
-
-@pytest.fixture
-def create_campaign_page_verification(create_campaign_page):
-    return CreateCampaignPageVerification(create_campaign_page)
-
-
-
-
-@pytest.fixture
-def surveys_page_verification(surveys_page):
-    return SurveysPageVerification(surveys_page)
-
-
-
-@pytest.fixture
-def settings_common_page_verification(settings_common_page):
-    return SettingsCommonPageVerification(settings_common_page)
-
-
-
-
-@pytest.fixture
-def surveys_page_verification(surveys_page):
-    return SurveysPageVerification(surveys_page)
-
-
-@pytest.fixture
-def settings_common_page_verification(settings_common_page):
-    return SettingsCommonPageVerification(settings_common_page)
-
 
 
 @pytest.fixture

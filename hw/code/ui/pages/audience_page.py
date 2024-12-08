@@ -88,6 +88,20 @@ class AudiencePage(BasePage):
         key_phrases_input.clear()
         key_phrases_input.send_keys(' '.join(key_phrases))
 
+    def enter_minus_phrases(self, key_phrases: list):
+        key_phrases_input = self.find(self.locators.MINUS_PHRASES_INPUT)
+        key_phrases_input.clear()
+        key_phrases_input.send_keys(' '.join(key_phrases))
+
+    def enter_groups(self, groups: list):
+        key_phrases_input = self.find(self.locators.GROUPS)
+        key_phrases_input.clear()
+        key_phrases_input.send_keys(' '.join(groups))
+
+    def edit_audience(self, name: str):
+        self.click(self.locators.OPTIONS)
+        self.scroll_and_click(self.locators.NEW_OPTIONS(name))
+
     def click_modal_page_submit_button(self):
         self.became_visible(self.locators.AUDIENCE_READY)
         try:

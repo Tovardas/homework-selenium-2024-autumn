@@ -83,3 +83,10 @@ class AudiencePageLocators(BasePageLocators):
     DELETE_CONFIRM_MODAL = (By.XPATH, "(//*[text()='Удалить аудиторию?'])")
 
     SEARCH_INPUT = (By.XPATH, "//input[@placeholder='Поиск']")
+
+    OPTIONS = (By.XPATH, "//div[@class='HintSelector_hintSelectorButton__pfubH']")
+
+    @staticmethod
+    def NEW_OPTIONS(item_name):
+        return By.XPATH, f"//*[text()='{item_name}']"
+

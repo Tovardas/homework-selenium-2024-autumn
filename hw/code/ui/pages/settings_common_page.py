@@ -1,5 +1,3 @@
-import time
-
 from selenium.webdriver import Keys
 from ui.locators.settings_common_page_locators import SettingsCommonPageLocators
 from ui.pages.base_page import BasePage
