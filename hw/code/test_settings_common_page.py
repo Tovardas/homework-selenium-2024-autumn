@@ -6,10 +6,13 @@ from base_case import BaseCase
 class TestSettingsCommonPage(BaseCase):
     FULL_NAME = 'Tester T T'
     INN = '123456789012'
+    VALID_INN = ['312947019840', '756709877700', '482081431745']
+    VALID_NAME = ['Иван Иванов Иванович', 'иван иванов иванович', 'Иван', 'иван', 'Иванов', 'Иванович', 'сунь-зы', 'сунь - Зы', 'Иван-', '-Иван', '-Иван-', 'ы', 'и в а', '-и-в-а-']
 
-    def test_is_page_became_visible(self, settings_common_page, settings_common_page_verification):
-        with allure.step("Проверяем видимость элементов на странице"):
-            settings_common_page_verification.check_page_elements_visibility()
+    def test_base_details_change(self, settings_common_page):
+        with allure.step("Проверка изменения реквизитов на базовые параметры"):
+            settings_common_page.enter_full_name(self.VALID_NAME[0])
+            settings_common_page.enter_inn(self.VALID_INN[0])
 
     def test_is_error_invalid_phone_number(self, settings_common_page, settings_common_page_verification):
         with allure.step("Проверяем ошибку при вводе некорректного номера телефона"):

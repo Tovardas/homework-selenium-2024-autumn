@@ -7,40 +7,17 @@ from selenium.webdriver.chrome.options import Options
 from ui.pages.audience_page import AudiencePage
 from ui.pages.auth_page import AuthPage
 from ui.pages.base_page import BasePage
-from ui.pages.budget_page import BudgetPage
 from ui.pages.cabinet_page import CabinetPage
 from ui.pages.campaign_page import CampaignPage
-from ui.pages.cases_page import CasesPage
-from ui.pages.center_commerce_page import CenterCommercePage
 from ui.pages.create_campaign_page import CreateCampaignPage
-from ui.pages.forum_page import ForumsPage
-from ui.pages.guide_no_reg_page import GuideNoRegPage
-from ui.pages.guide_page import GuidePage
 from ui.pages.lead_forms_page import LeadFormsPage
-from ui.pages.main_page import MainPage
-from ui.pages.navbar_no_reg import NavbarNoReg
-from ui.pages.partner_page import PartnerPage
-from ui.pages.pixels_page import PixelsPage
-from ui.pages.registration_page import RegistrationPage
-from ui.pages.settings_access_page import SettingsAccessPage
-from ui.pages.settings_common_page import SettingsCommonPage
-from ui.pages.settings_notifications_page import SettingsNotificationsPage
 from ui.pages.surveys_page import SurveysPage
+from ui.pages.registration_page import RegistrationPage
+from ui.pages.settings_common_page import SettingsCommonPage
 from ui.verification.audience_page_verification import AudiencePageVerification
-from ui.verification.budget_page_verification import BudgetPageVerification
 from ui.verification.campaign_page_verification import CampaignVerification
-from ui.verification.cases_page_verification import CasesPageVerification
-from ui.verification.commerce_center_verification import CommerceCenterVerification
 from ui.verification.create_campaign_page_verification import CreateCampaignPageVerification
-from ui.verification.footer_verification import FooterVerification
-from ui.verification.forum_page_verification import ForumPageVerification
-from ui.verification.guide_page_verification import GuidePageVerification
-from ui.verification.main_page_verification import MainPageVerification
-from ui.verification.partner_page_verification import PartnerPageVerification
-from ui.verification.pixels_page_verification import PixelsPageVerification
-from ui.verification.settings_access_page_verification import SettingsAccessPageVerification
 from ui.verification.settings_common_page_verification import SettingsCommonPageVerification
-from ui.verification.settings_notifications_page_verification import SettingsNotificationsPageVerification
 from ui.verification.survey_page_verification import SurveysPageVerification
 
 
@@ -103,56 +80,12 @@ def settings_common_page(driver, cabinet_page):
     return SettingsCommonPage(driver=driver)
 
 
-@pytest.fixture
-def settings_access_page(driver, cabinet_page):
-    driver.get(SettingsAccessPage.url)
-    return SettingsAccessPage(driver=driver)
-
-
-@pytest.fixture
-def settings_notifications_page(driver, cabinet_page):
-    driver.get(SettingsNotificationsPage.url)
-    return SettingsNotificationsPage(driver=driver)
-
-
-@pytest.fixture
-def guide_page(driver, cabinet_page):
-    driver.get(GuidePage.url)
-    return GuidePage(driver=driver)
-
-
-@pytest.fixture
-def pixels_page(driver, cabinet_page):
-    driver.get(PixelsPage.url)
-    return PixelsPage(driver=driver)
-
-
-@pytest.fixture
-def navbar_no_reg(driver):
-    return NavbarNoReg(driver=driver)
-
-
-@pytest.fixture
-def guide_no_reg_page(driver):
-    return GuideNoRegPage(driver=driver)
-
-
-@pytest.fixture
-def forum_page(driver):
-    driver.get(ForumsPage.url)
-    return ForumsPage(driver=driver)
-
 
 @pytest.fixture
 def campaign_page(driver, cabinet_page):
     driver.get(CampaignPage.url)
     return CampaignPage(driver=driver)
 
-
-@pytest.fixture
-def center_commerce_page(driver, cabinet_page):
-    driver.get(CenterCommercePage.url)
-    return CenterCommercePage(driver=driver)
 
 
 @pytest.fixture
@@ -167,10 +100,6 @@ def create_campaign_page(driver, cabinet_page):
     return CreateCampaignPage(driver=driver)
 
 
-@pytest.fixture
-def budget_page(driver, cabinet_page):
-    driver.get(BudgetPage.url)
-    return BudgetPage(driver=driver)
 
 
 @pytest.fixture
@@ -178,9 +107,6 @@ def audience_page_verification(audience_page):
     return AudiencePageVerification(audience_page)
 
 
-@pytest.fixture
-def budget_page_verification(budget_page):
-    return BudgetPageVerification(budget_page)
 
 
 @pytest.fixture
@@ -188,9 +114,7 @@ def campaign_verification(campaign_page):
     return CampaignVerification(campaign_page)
 
 
-@pytest.fixture
-def commerce_center_verification(commerce_page):
-    return CommerceCenterVerification(commerce_page)
+
 
 
 @pytest.fixture
@@ -198,24 +122,19 @@ def create_campaign_page_verification(create_campaign_page):
     return CreateCampaignPageVerification(create_campaign_page)
 
 
-@pytest.fixture
-def footer_verification(main_page):
-    return FooterVerification(main_page)
 
 
 @pytest.fixture
-def main_page_verification(main_page):
-    return MainPageVerification(main_page)
+def surveys_page_verification(surveys_page):
+    return SurveysPageVerification(surveys_page)
 
-
-@pytest.fixture
-def partner_page_verification(partner_page):
-    return PartnerPageVerification(partner_page)
 
 
 @pytest.fixture
-def forum_page_verification(forum_page):
-    return ForumPageVerification(forum_page)
+def settings_common_page_verification(settings_common_page):
+    return SettingsCommonPageVerification(settings_common_page)
+
+
 
 
 @pytest.fixture
@@ -224,63 +143,9 @@ def surveys_page_verification(surveys_page):
 
 
 @pytest.fixture
-def cases_page_verification(cases_page):
-    return CasesPageVerification(cases_page)
-
-
-@pytest.fixture
-def settings_notifications_page_verification(settings_notifications_page):
-    return SettingsNotificationsPageVerification(settings_notifications_page)
-
-
-@pytest.fixture
 def settings_common_page_verification(settings_common_page):
     return SettingsCommonPageVerification(settings_common_page)
 
-
-@pytest.fixture
-def settings_access_page_verification(settings_access_page):
-    return SettingsAccessPageVerification(settings_access_page)
-
-
-@pytest.fixture
-def surveys_page_verification(surveys_page):
-    return SurveysPageVerification(surveys_page)
-
-
-@pytest.fixture
-def cases_page_verification(cases_page):
-    return CasesPageVerification(cases_page)
-
-
-@pytest.fixture
-def settings_notifications_page_verification(settings_notifications_page):
-    return SettingsNotificationsPageVerification(settings_notifications_page)
-
-
-@pytest.fixture
-def settings_common_page_verification(settings_common_page):
-    return SettingsCommonPageVerification(settings_common_page)
-
-
-@pytest.fixture
-def settings_access_page_verification(settings_access_page):
-    return SettingsAccessPageVerification(settings_access_page)
-
-
-@pytest.fixture
-def pixels_page_verification(pixels_page):
-    return PixelsPageVerification(pixels_page)
-
-
-@pytest.fixture
-def guide_page_verification(guide_page):
-    return GuidePageVerification(guide_page)
-
-
-@pytest.fixture
-def cases_page(driver):
-    return CasesPage(driver=driver)
 
 
 @pytest.fixture
@@ -288,16 +153,6 @@ def surveys_page(driver, cabinet_page):
     driver.get(SurveysPage.url)
     return SurveysPage(driver=driver)
 
-
-@pytest.fixture
-def partner_page(driver):
-    driver.get(PartnerPage.url)
-    return PartnerPage(driver=driver)
-
-
-@pytest.fixture
-def main_page(driver):
-    return MainPage(driver=driver)
 
 
 @pytest.fixture
