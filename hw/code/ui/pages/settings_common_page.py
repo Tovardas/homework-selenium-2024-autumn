@@ -3,6 +3,9 @@ import time
 from selenium.webdriver import Keys
 from ui.locators.settings_common_page_locators import SettingsCommonPageLocators
 from ui.pages.base_page import BasePage
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class SettingsCommonPage(BasePage):
@@ -27,9 +30,57 @@ class SettingsCommonPage(BasePage):
         full_name_input = self.find(self.locators.FULL_NAME_INPUT)
         full_name_input.clear()
         full_name_input.send_keys(full_name)
+        full_name_input.send_keys(Keys.ENTER)
 
     def get_full_name_field_value(self) -> str:
         return self.find(self.locators.FULL_NAME_INPUT).get_attribute('value')
+
+    def get_inn_field_value(self) -> str:
+        return self.find(self.locators.INN_INPUT).get_attribute('value')
+
+    def get_email_field_value(self):
+        return self.find(self.locators.ADDITIONAL_EMAIL_INPUT(0)).get_attribute('value')
+
+    def get_phone_number_value(self):
+        return self.find(self.locators.PHONE_NUMBER_INPUT).get_attribute('value')
+
+
+    def is_full_name_matches(self, full_name: str, timeout: int = 5) -> bool:
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                lambda driver: self.get_full_name_field_value() == full_name
+            )
+            return True
+        except TimeoutException:
+            return False
+
+    def is_inn_matches(self, inn: str, timeout: int = 5)-> bool:
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                lambda driver: self.get_inn_field_value() == inn
+            )
+            return True
+        except TimeoutException:
+            return False
+
+    def is_phone_matches(self, phone: str, timeout: int = 5)-> bool:
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                lambda driver: self.get_phone_number_value() == phone
+            )
+            return True
+        except TimeoutException:
+            return False
+
+
+    def is_email_matches(self, email: str, timeout: int = 5)-> bool:
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                lambda driver: self.get_email_field_value() == email
+            )
+            return True
+        except TimeoutException:
+            return False
 
     def save_and_cancel_buttons_became_visible(self) -> bool:
         return (self.became_visible(self.locators.SAVE_BUTTON)
@@ -55,6 +106,8 @@ class SettingsCommonPage(BasePage):
         email_input.clear()
         email_input.send_keys(email)
         email_input.send_keys(Keys.ENTER)
+
+
 
     def get_email_error(self) -> str:
         return self.find(self.locators.EMAIL_ERROR).text

@@ -15,9 +15,6 @@ from ui.pages.surveys_page import SurveysPage
 from ui.pages.registration_page import RegistrationPage
 from ui.pages.settings_common_page import SettingsCommonPage
 from ui.verification.audience_page_verification import AudiencePageVerification
-from ui.verification.campaign_page_verification import CampaignVerification
-from ui.verification.create_campaign_page_verification import CreateCampaignPageVerification
-from ui.verification.settings_common_page_verification import SettingsCommonPageVerification
 from ui.verification.survey_page_verification import SurveysPageVerification
 
 
