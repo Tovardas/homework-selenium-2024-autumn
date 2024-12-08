@@ -1,5 +1,4 @@
 from ui.pages.base_page import BasePage
-import time
 from ui.locators.lead_forms_locators import LeadFormsPageLocators
 from selenium.webdriver.support import expected_conditions as ec
 
@@ -159,31 +158,26 @@ class LeadFormsPage(BasePage):
         assert more_text_empty.text == expected_message, f"Expected '{expected_message}', got '{more_text_empty.text}'"
 
     def check_error_1_magnet_bonus(self, expected_message):
-        time.sleep(1)
         more_text_empty = self.find(self.locators.ERROR_1_MAGNET_BONUS)
 
         assert more_text_empty.text == expected_message, f"Expected '{expected_message}', got '{more_text_empty.text}'"
 
     def fill_1_magnet_sale(self, text):
-        time.sleep(1)
         more_text_input = self.find(self.locators.MAGNET_SALE_INPUT)
         more_text_input.clear()
         more_text_input.send_keys(text)
 
     def check_zero_1_magnet_sale(self, expected_message):
-        time.sleep(1)
         more_text_empty = self.find(self.locators.ERROR_1_MAGNET_SALE_ZERO)
 
         assert more_text_empty.text == expected_message, f"Expected '{expected_message}', got '{more_text_empty.text}'"
 
     def check_over_1_magnet_sale(self, expected_message):
-        time.sleep(1)
         more_text_empty = self.find(self.locators.ERROR_1_MAGNET_SALE_OVER)
 
         assert more_text_empty.text == expected_message, f"Expected '{expected_message}', got '{more_text_empty.text}'"
 
     def fill_form_1(self):
-        time.sleep(1)
         leadform_name_input = self.find(self.locators.LEADFORM_NAME_INPUT)
         company_name_input = self.find(self.locators.COMPANY_NAME_INPUT)
         title_input = self.find(self.locators.LEADFORM_TITLE_INPUT)
@@ -194,7 +188,6 @@ class LeadFormsPage(BasePage):
         description_input.send_keys('a'*10)
 
     def create_question_2(self):
-        time.sleep(1)
         self.click(self.locators.ADD_QUESTION_BUTTON)
 
     def fill_2_question(self, description):
@@ -255,7 +248,6 @@ class LeadFormsPage(BasePage):
         self.click(self.locators.BIN_PHONE_BUTTON)
 
     def check_question_2_error(self):
-        time.sleep(1)
         self.find(self.locators.ERROR_2_QUESTION)
 
     def check_error_2_contacts(self, expected_message):
@@ -263,7 +255,6 @@ class LeadFormsPage(BasePage):
         assert error.text == expected_message, f"Expected '{expected_message}', got '{error.text}'"
 
     def empty_3_header(self):
-        time.sleep(1)
         heading_input = self.find(self.locators.HEADING_INPUT)
         heading_input.clear()
 
@@ -278,13 +269,11 @@ class LeadFormsPage(BasePage):
         answer_input.send_keys(description)
 
     def check_empty_3_heading(self, expected_message):
-        time.sleep(1)
         heading_empty = self.find(self.locators.ERROR_3_HEADING)
 
         assert heading_empty.text == expected_message, f"Expected '{expected_message}', got '{heading_empty.text}'"
 
     def check_errors_3_heading(self, expected_message):
-        time.sleep(1)
         heading_empty = self.find(self.locators.ERROR_3_HEADING)
         description_empty = self.find(self.locators.ERROR_3_DESCRIPTION)
 
@@ -313,19 +302,16 @@ class LeadFormsPage(BasePage):
         promocode_input.send_keys(promocode)
 
     def check_errors_3_site(self, expected_message):
-        time.sleep(1)
         site_input = self.find(self.locators.ERROR_3_SITE)
 
         assert site_input.text == expected_message, f"Expected '{expected_message}', got '{site_input.text}'"
 
     def check_errors_3_phone(self, expected_message):
-        time.sleep(1)
         phone_input = self.find(self.locators.ERROR_3_PHONE)
 
         assert phone_input.text == expected_message, f"Expected '{expected_message}', got '{phone_input.text}'"
 
     def check_errors_3_promocode(self, expected_message):
-        time.sleep(1)
         promocode_input = self.find(self.locators.ERROR_3_PROMO)
 
         assert promocode_input.text == expected_message, f"Expected '{expected_message}', got '{promocode_input.text}'"
@@ -334,17 +320,14 @@ class LeadFormsPage(BasePage):
         self.click(self.locators.NOTIFY_EMAIL_BUTTON)
 
     def empty_4_name(self):
-        time.sleep(1)
         name_input = self.find(self.locators.NAME_4_INPUT)
         name_input.clear()
 
     def empty_4_address(self):
-        time.sleep(1)
         address_input = self.find(self.locators.ADDRESS_INPUT)
         address_input.clear()
 
     def empty_4_email(self):
-        time.sleep(1)
         email_input = self.find(self.locators.EMAIL_INPUT)
         email_input.clear()
 
@@ -372,7 +355,6 @@ class LeadFormsPage(BasePage):
         inn_input.send_keys(inn)
 
     def check_4_errors_empty(self, expected_message):
-        time.sleep(1)
         name_input = self.find(self.locators.ERROR_4_NAME)
         address_input = self.find(self.locators.ERROR_4_ADDRESS)
 
@@ -380,7 +362,6 @@ class LeadFormsPage(BasePage):
         assert address_input.text == expected_message, f"Expected '{expected_message}', got '{address_input.text}'"
 
     def check_4_errors_len(self, expected_message):
-        time.sleep(1)
         name_input = self.find(self.locators.ERROR_4_NAME)
         address_input = self.find(self.locators.ERROR_4_ADDRESS)
         inn_input = self.find(self.locators.ERROR_4_INN)
@@ -390,13 +371,11 @@ class LeadFormsPage(BasePage):
         assert inn_input.text == expected_message, f"Expected '{expected_message}', got '{inn_input.text}'"
 
     def check_4_error_email(self, expected_message):
-        time.sleep(1)
         email_input = self.find(self.locators.ERROR_4_EMAIL)
 
         assert email_input.text == expected_message, f"Expected '{expected_message}', got '{email_input.text}'"
 
     def check_4_error_notify_email(self, expected_message):
-        time.sleep(1)
         email_input = self.find(self.locators.ERROR_4_NOTIFY_EMAIL)
 
         assert email_input.text == expected_message, f"Expected '{expected_message}', got '{email_input.text}'"

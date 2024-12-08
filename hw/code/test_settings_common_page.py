@@ -1,13 +1,9 @@
-import time
-
 import allure
 
 from base_case import BaseCase
 
 
 class TestSettingsCommonPage(BaseCase):
-    FULL_NAME = 'Tester T T'
-    INN = '123456789012'
     VALID_INN = ['312947019840', '756709877700', '482081431745']
     VALID_NAME = ['Иван Иванов Иванович', 'иван иванов иванович', 'Иван', 'иван', 'Иванов', 'Иванович', 'сунь-зы', 'сунь - Зы', 'Иван-', '-Иван', '-Иван-', 'ы', 'и в а', '-и-в-а-']
     VALID_PHONE = ['+7915111111133', '+791511111113', '+79151111111', '+8915111111113', '+891511111113', '+89151111111']
@@ -239,6 +235,6 @@ class TestSettingsCommonPage(BaseCase):
     def test_cancel_changes(self, settings_common_page):
         with allure.step("Проверяем отмену изменений в поле 'ФИО'"):
             full_name_before = settings_common_page.get_full_name_field_value()
-            settings_common_page.enter_full_name(self.FULL_NAME)
+            settings_common_page.enter_full_name(self.VALID_NAME[0])
             settings_common_page.click_cancel_button()
             assert settings_common_page.get_full_name_field_value() == full_name_before

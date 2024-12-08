@@ -1,5 +1,3 @@
-import time
-
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.action_chains import ActionChains
