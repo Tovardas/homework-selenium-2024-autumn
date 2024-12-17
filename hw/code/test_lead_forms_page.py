@@ -23,18 +23,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -42,18 +42,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -71,7 +71,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -81,18 +81,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_last_image_name_from_media_library()
 
         leadforms_page.click_1_more_text()
-        leadforms_page.fill_1_more_text_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_more_text_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Тут длинное описание...')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -101,18 +101,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_last_image_name_from_media_library()
 
         leadforms_page.click_1_more_text()
-        leadforms_page.fill_1_more_text_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_more_text_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Here should be many words...')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -131,7 +131,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -142,18 +142,18 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.click_1_magnet()
         leadforms_page.fill_1_magnet_sale(50)
-        leadforms_page.fill_1_without_desc_data('ф', 'ф', 'ф')
+        leadforms_page.fill_1_without_desc_data('Наша лид форма', 'Техносад', 'Наша лид форма')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -163,18 +163,18 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.click_1_magnet()
         leadforms_page.fill_1_magnet_sale(50)
-        leadforms_page.fill_1_without_desc_data('a', 'a', 'a')
+        leadforms_page.fill_1_without_desc_data('Our lead form', 'Technogarden', 'Our lead form')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -194,7 +194,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -206,18 +206,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_1_magnet()
         leadforms_page.click_1_magnet_sale_percent()
         leadforms_page.fill_1_magnet_sale(50)
-        leadforms_page.fill_1_without_desc_data('ф', 'ф', 'ф')
+        leadforms_page.fill_1_without_desc_data('Наша лид форма', 'Техносад', 'Наша лид форма')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -228,18 +228,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_1_magnet()
         leadforms_page.click_1_magnet_sale_percent()
         leadforms_page.fill_1_magnet_sale(50)
-        leadforms_page.fill_1_without_desc_data('a', 'a', 'a')
+        leadforms_page.fill_1_without_desc_data('Our lead form', 'Technogarden', 'Our lead form')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -260,7 +260,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -272,18 +272,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_1_magnet()
         leadforms_page.click_1_magnet_bonus()
         leadforms_page.fill_1_magnet_bonus('ф')
-        leadforms_page.fill_1_without_desc_data('ф', 'ф', 'ф')
+        leadforms_page.fill_1_without_desc_data('Наша лид форма', 'Техносад', 'Наша лид форма')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -294,18 +294,18 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_1_magnet()
         leadforms_page.click_1_magnet_bonus()
         leadforms_page.fill_1_magnet_bonus('a')
-        leadforms_page.fill_1_without_desc_data('a', 'a', 'a')
+        leadforms_page.fill_1_without_desc_data('Our lead form', 'Technogarden', 'Our lead form')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -326,7 +326,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -335,7 +335,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -344,14 +344,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -359,7 +359,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -368,14 +368,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -383,7 +383,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -392,14 +392,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -407,7 +407,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -416,14 +416,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -431,7 +431,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -440,14 +440,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -455,7 +455,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -464,14 +464,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -480,7 +480,7 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_last_image_name_from_media_library()
 
         time.sleep(1)
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
@@ -494,14 +494,14 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_selected_contacts()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -509,22 +509,22 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
-        leadforms_page.fill_2_question('ф')
-        leadforms_page.fill_2_answer_1('ф')
-        leadforms_page.fill_2_answer_2('ф')
+        leadforms_page.fill_2_question('Вопрос')
+        leadforms_page.fill_2_answer_1('Первый ответ')
+        leadforms_page.fill_2_answer_2('Второй ответ')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -532,22 +532,22 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
-        leadforms_page.fill_2_question('a')
-        leadforms_page.fill_2_answer_1('a')
-        leadforms_page.fill_2_answer_2('a')
+        leadforms_page.fill_2_question('Question')
+        leadforms_page.fill_2_answer_1('First answer')
+        leadforms_page.fill_2_answer_2('Second answer')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -569,7 +569,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -578,24 +578,24 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
-        leadforms_page.fill_2_question('ф')
-        leadforms_page.fill_2_answer_1('ф')
-        leadforms_page.fill_2_answer_2('ф')
+        leadforms_page.fill_2_question('Вопрос')
+        leadforms_page.fill_2_answer_1('Первый ответ')
+        leadforms_page.fill_2_answer_2('Второй ответ')
         leadforms_page.click_add_answer()
-        leadforms_page.fill_2_answer_3('ф')
+        leadforms_page.fill_2_answer_3('Третий вопрос')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -603,24 +603,24 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
-        leadforms_page.fill_2_question('a')
-        leadforms_page.fill_2_answer_1('a')
-        leadforms_page.fill_2_answer_2('a')
+        leadforms_page.fill_2_question('Question')
+        leadforms_page.fill_2_answer_1('First answer')
+        leadforms_page.fill_2_answer_2('Second answer')
         leadforms_page.click_add_answer()
-        leadforms_page.fill_2_answer_3('a')
+        leadforms_page.fill_2_answer_3('Third answer')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -644,7 +644,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -653,23 +653,23 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
         leadforms_page.click_multiple_answers_question()
-        leadforms_page.fill_2_question('ф')
-        leadforms_page.fill_2_answer_1('ф')
-        leadforms_page.fill_2_answer_2('ф')
+        leadforms_page.fill_2_question('Вопрос')
+        leadforms_page.fill_2_answer_1('Первый ответ')
+        leadforms_page.fill_2_answer_2('Второй ответ')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -677,23 +677,23 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
         leadforms_page.click_multiple_answers_question()
-        leadforms_page.fill_2_question('a')
-        leadforms_page.fill_2_answer_1('a')
-        leadforms_page.fill_2_answer_2('a')
+        leadforms_page.fill_2_question('Question')
+        leadforms_page.fill_2_answer_1('First answer')
+        leadforms_page.fill_2_answer_2('Second answer')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -716,7 +716,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -725,25 +725,25 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
         leadforms_page.click_multiple_answers_question()
-        leadforms_page.fill_2_question('ф')
-        leadforms_page.fill_2_answer_1('ф')
-        leadforms_page.fill_2_answer_2('ф')
+        leadforms_page.fill_2_question('Вопрос')
+        leadforms_page.fill_2_answer_1('Первый ответ')
+        leadforms_page.fill_2_answer_2('Второй ответ')
         leadforms_page.click_add_answer()
-        leadforms_page.fill_2_answer_3('ф')
+        leadforms_page.fill_2_answer_3('Третий вопрос')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -751,25 +751,25 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
         leadforms_page.click_multiple_answers_question()
-        leadforms_page.fill_2_question('a')
-        leadforms_page.fill_2_answer_1('a')
-        leadforms_page.fill_2_answer_2('a')
+        leadforms_page.fill_2_question('Question')
+        leadforms_page.fill_2_answer_1('First answer')
+        leadforms_page.fill_2_answer_2('Second answer')
         leadforms_page.click_add_answer()
-        leadforms_page.fill_2_answer_3('a')
+        leadforms_page.fill_2_answer_3('Third answer')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -794,7 +794,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -803,21 +803,21 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
         leadforms_page.click_user_input_question()
-        leadforms_page.fill_2_question('ф')
+        leadforms_page.fill_2_question('Вопрос')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -825,21 +825,21 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.create_question_2()
         leadforms_page.click_user_input_question()
-        leadforms_page.fill_2_question('a')
+        leadforms_page.fill_2_question('Question')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -860,7 +860,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -891,7 +891,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -900,20 +900,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.click_3_site()
-        leadforms_page.fill_3_site('http://aboba.ru')
+        leadforms_page.fill_3_site('https://taskfile.dev/')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -921,20 +921,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.click_3_site()
-        leadforms_page.fill_3_site('http://aboba.ru')
+        leadforms_page.fill_3_site('https://taskfile.dev/')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -949,12 +949,12 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.fill_3_header('1')
         leadforms_page.fill_3_description('1')
         leadforms_page.click_3_site()
-        leadforms_page.fill_3_site('http://aboba.ru')
+        leadforms_page.fill_3_site('https://taskfile.dev/')
         leadforms_page.continue_1()
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -963,20 +963,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.click_3_phone()
         leadforms_page.fill_3_phone('+77777777777')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -984,20 +984,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.click_3_phone()
         leadforms_page.fill_3_phone('+77777777777')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -1017,7 +1017,7 @@ class TestLeadFormsPage(BaseCase):
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -1026,20 +1026,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.click_3_promocode()
-        leadforms_page.fill_3_promocode('ф')
+        leadforms_page.fill_3_promocode('ULTRAKARETA')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -1047,20 +1047,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.click_3_promocode()
-        leadforms_page.fill_3_promocode('a')
+        leadforms_page.fill_3_promocode('ULTRAKARETA')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -1075,12 +1075,12 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.fill_3_header('1')
         leadforms_page.fill_3_description('1')
         leadforms_page.click_3_promocode()
-        leadforms_page.fill_3_promocode('1')
+        leadforms_page.fill_3_promocode('ULTRAKARETA')
         leadforms_page.continue_1()
 
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -1089,20 +1089,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.continue_1()
 
         leadforms_page.click_4_notify()
-        leadforms_page.fill_4_notify_email('aboba@mail.ru')
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_notify_email('no-reply@gmail.com')
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -1110,20 +1110,20 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.continue_1()
 
         leadforms_page.click_4_notify()
-        leadforms_page.fill_4_notify_email('aboba@mail.ru')
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_notify_email('no-reply@gmail.com')
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -1140,10 +1140,10 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.continue_1()
 
         leadforms_page.click_4_notify()
-        leadforms_page.fill_4_notify_email('aboba@mail.ru')
+        leadforms_page.fill_4_notify_email('no-reply@gmail.com')
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()
@@ -1152,9 +1152,9 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
-        
+
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
         leadforms_page.click_add_contact_data()
@@ -1166,37 +1166,37 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_city_contact()
         leadforms_page.click_add_selected_contacts()
         leadforms_page.create_question_2()
-        leadforms_page.fill_2_question('ф')
-        leadforms_page.fill_2_answer_1('ф')
-        leadforms_page.fill_2_answer_2('ф')
+        leadforms_page.fill_2_question('Вопрос')
+        leadforms_page.fill_2_answer_1('Первый ответ')
+        leadforms_page.fill_2_answer_2('Второй ответ')
         leadforms_page.create_question_2()
         leadforms_page.click_multiple_answers_question()
-        leadforms_page.fill_2_question('ф')
-        leadforms_page.fill_2_answer_1('ф')
-        leadforms_page.fill_2_answer_2('ф')
+        leadforms_page.fill_2_question('Вопрос')
+        leadforms_page.fill_2_answer_1('Первый ответ')
+        leadforms_page.fill_2_answer_2('Второй ответ')
         leadforms_page.create_question_2()
         leadforms_page.click_user_input_question()
-        leadforms_page.fill_2_question('ф')
+        leadforms_page.fill_2_question('Вопрос')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('ф')
-        leadforms_page.fill_3_description('ф')
+        leadforms_page.fill_3_header('Спасибо, до свидания')
+        leadforms_page.fill_3_description('Кредит одобрен')
         leadforms_page.click_3_site()
-        leadforms_page.fill_3_site('http://aboba.ru')
+        leadforms_page.fill_3_site('https://taskfile.dev/')
         leadforms_page.click_3_phone()
         leadforms_page.fill_3_phone('+77777777777')
         leadforms_page.click_3_promocode()
-        leadforms_page.fill_3_promocode('ф')
+        leadforms_page.fill_3_promocode('ULTRAKARETA')
         leadforms_page.continue_1()
 
         leadforms_page.click_4_notify()
-        leadforms_page.fill_4_notify_email('aboba@mail.ru')
-        leadforms_page.fill_4_name('ф')
-        leadforms_page.fill_4_address('ф')
-        leadforms_page.fill_4_email('aboba@mail.ru')
-        leadforms_page.fill_4_inn('ф')
-        
-        assert leadforms_page.get_form_name() == 'ф'
+        leadforms_page.fill_4_notify_email('no-reply@gmail.com')
+        leadforms_page.fill_4_name('Аркадий Паровозов')
+        leadforms_page.fill_4_address('г. Саратов, ул. Вторая, д.14 кв. 99')
+        leadforms_page.fill_4_email('no-reply@gmail.com')
+        leadforms_page.fill_4_inn('7789572557853')
+
+        assert leadforms_page.get_form_name() == 'Наша лид форма'
 
         leadforms_page.remove_lead_form()
 
@@ -1204,9 +1204,9 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        leadforms_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        leadforms_page.fill_1_compact_all_data('Our lead form', 'Technogarden', 'Our lead form', 'Must pass')
         leadforms_page.continue_1()
-        
+
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
         leadforms_page.click_add_contact_data()
@@ -1218,37 +1218,37 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_add_city_contact()
         leadforms_page.click_add_selected_contacts()
         leadforms_page.create_question_2()
-        leadforms_page.fill_2_question('a')
-        leadforms_page.fill_2_answer_1('a')
-        leadforms_page.fill_2_answer_2('a')
+        leadforms_page.fill_2_question('Question')
+        leadforms_page.fill_2_answer_1('First answer')
+        leadforms_page.fill_2_answer_2('Second answer')
         leadforms_page.create_question_2()
         leadforms_page.click_multiple_answers_question()
-        leadforms_page.fill_2_question('a')
-        leadforms_page.fill_2_answer_1('a')
-        leadforms_page.fill_2_answer_2('a')
+        leadforms_page.fill_2_question('Question')
+        leadforms_page.fill_2_answer_1('First answer')
+        leadforms_page.fill_2_answer_2('Second answer')
         leadforms_page.create_question_2()
         leadforms_page.click_user_input_question()
-        leadforms_page.fill_2_question('a')
+        leadforms_page.fill_2_question('Question')
         leadforms_page.continue_1()
 
-        leadforms_page.fill_3_header('a')
-        leadforms_page.fill_3_description('a')
+        leadforms_page.fill_3_header('Thanks, bye')
+        leadforms_page.fill_3_description('You banned')
         leadforms_page.click_3_site()
-        leadforms_page.fill_3_site('http://aboba.ru')
+        leadforms_page.fill_3_site('https://taskfile.dev/')
         leadforms_page.click_3_phone()
         leadforms_page.fill_3_phone('+77777777777')
         leadforms_page.click_3_promocode()
-        leadforms_page.fill_3_promocode('a')
+        leadforms_page.fill_3_promocode('ULTRAKARETA')
         leadforms_page.continue_1()
 
         leadforms_page.click_4_notify()
-        leadforms_page.fill_4_notify_email('aboba@mail.ru')
-        leadforms_page.fill_4_name('a')
-        leadforms_page.fill_4_address('a')
-        leadforms_page.fill_4_email('aboba@mail.ru')
-        leadforms_page.fill_4_inn('a')
-        
-        assert leadforms_page.get_form_name() == 'a'
+        leadforms_page.fill_4_notify_email('no-reply@gmail.com')
+        leadforms_page.fill_4_name('Arkadiy Parovozov')
+        leadforms_page.fill_4_address('Saratow, Vtoraya street, 14, 99')
+        leadforms_page.fill_4_email('no-reply@gmail.com')
+        leadforms_page.fill_4_inn('7789572557853')
+
+        assert leadforms_page.get_form_name() == 'Our lead form'
 
         leadforms_page.remove_lead_form()
 
@@ -1259,7 +1259,7 @@ class TestLeadFormsPage(BaseCase):
         time.sleep(1)
         leadforms_page.fill_1_compact_all_data('1', '1', '1', '1')
         leadforms_page.continue_1()
-        
+
         leadforms_page.click_2_bin_name()
         leadforms_page.click_2_bin_phone()
         leadforms_page.click_add_contact_data()
@@ -1287,21 +1287,21 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.fill_3_header('1')
         leadforms_page.fill_3_description('1')
         leadforms_page.click_3_site()
-        leadforms_page.fill_3_site('http://aboba.ru')
+        leadforms_page.fill_3_site('https://taskfile.dev/')
         leadforms_page.click_3_phone()
         leadforms_page.fill_3_phone('+77777777777')
         leadforms_page.click_3_promocode()
-        leadforms_page.fill_3_promocode('1')
+        leadforms_page.fill_3_promocode('ULTRAKARETA')
         leadforms_page.continue_1()
 
         leadforms_page.click_4_notify()
-        leadforms_page.fill_4_notify_email('aboba@mail.ru')
+        leadforms_page.fill_4_notify_email('no-reply@gmail.com')
         leadforms_page.fill_4_name('1')
         leadforms_page.fill_4_address('1')
-        leadforms_page.fill_4_email('aboba@mail.ru')
-        leadforms_page.fill_4_inn('1')
+        leadforms_page.fill_4_email('no-reply@gmail.com')
+        leadforms_page.fill_4_inn('7789572557853')
         leadforms_page.continue_1()
-    
+
         assert leadforms_page.get_form_name() == '1'
 
         leadforms_page.remove_lead_form()

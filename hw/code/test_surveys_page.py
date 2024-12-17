@@ -25,19 +25,19 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
-        surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('ф')
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_2_title('Вопрос')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
+        surveys_page.click_continue()
+
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -45,19 +45,19 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
-        surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('a')
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_2_title('Question')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
+        surveys_page.click_continue()
+
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -67,7 +67,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.fill_2_title('1')
         surveys_page.fill_2_answer_1('1')
         surveys_page.fill_2_answer_2('1')
@@ -85,21 +85,21 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('ф')
+
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
-        surveys_page.fill_2_answer_3('ф')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
+        surveys_page.fill_2_answer_3('Третий ответ')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -107,21 +107,21 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('a')
+
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
-        surveys_page.fill_2_answer_3('a')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
+        surveys_page.fill_2_answer_3('Third answer')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -131,7 +131,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.fill_2_title('1')
         surveys_page.click_add_answer()
         surveys_page.fill_2_answer_1('1')
@@ -151,20 +151,20 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('ф')
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
+        surveys_page.fill_2_title('Вопрос')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -172,20 +172,20 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('a')
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
+        surveys_page.fill_2_title('Question')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -195,7 +195,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_many()
         surveys_page.fill_2_title('1')
         surveys_page.fill_2_answer_1('1')
@@ -214,22 +214,22 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
-        surveys_page.fill_2_answer_3('ф')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
+        surveys_page.fill_2_answer_3('Третий ответ')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -237,22 +237,22 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
-        surveys_page.fill_2_answer_3('a')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
+        surveys_page.fill_2_answer_3('Third answer')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -262,7 +262,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_many()
         surveys_page.fill_2_title('1')
         surveys_page.click_add_answer()
@@ -283,18 +283,18 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -302,18 +302,18 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -323,7 +323,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_answer()
         surveys_page.fill_2_title('1')
         surveys_page.click_continue()
@@ -340,18 +340,18 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -359,18 +359,18 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -380,7 +380,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.click_2_selector_scale()
         surveys_page.fill_2_title('1')
         surveys_page.click_continue()
@@ -397,30 +397,30 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('ф')
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
+
+        surveys_page.fill_2_title('Вопрос')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('ф')
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
+        surveys_page.fill_2_title('Вопрос')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -428,30 +428,30 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('a')
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
+
+        surveys_page.fill_2_title('Question')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('a')
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
+        surveys_page.fill_2_title('Question')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -461,7 +461,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.fill_2_title('1')
         surveys_page.fill_2_answer_1('1')
         surveys_page.fill_2_answer_2('1')
@@ -490,34 +490,34 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('ф')
+
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
-        surveys_page.fill_2_answer_3('ф')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
+        surveys_page.fill_2_answer_3('Третий ответ')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
-        surveys_page.fill_2_answer_3('ф')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
+        surveys_page.fill_2_answer_3('Третий ответ')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -525,34 +525,34 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('a')
+
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
-        surveys_page.fill_2_answer_3('a')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
+        surveys_page.fill_2_answer_3('Third answer')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_answer()
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
-        surveys_page.fill_2_answer_3('a')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
+        surveys_page.fill_2_answer_3('Third answer')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -562,7 +562,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.fill_2_title('1')
         surveys_page.click_add_answer()
         surveys_page.fill_2_answer_1('1')
@@ -595,32 +595,32 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('ф', 'ф', 'ф', 'ф')
+        surveys_page.fill_1_compact_all_data('Наш опрос', 'Техносад', 'Наш опрос', 'Обязательно к прохождению')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('ф')
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
+
+        surveys_page.fill_2_title('Вопрос')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('ф')
-        surveys_page.fill_2_answer_1('ф')
-        surveys_page.fill_2_answer_2('ф')
+        surveys_page.fill_2_title('Вопрос')
+        surveys_page.fill_2_answer_1('Первый ответ')
+        surveys_page.fill_2_answer_2('Второй ответ')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('ф')
+        surveys_page.fill_2_title('Вопрос')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('ф')
-        surveys_page.fill_3_description('ф')
+        surveys_page.fill_3_thanks('Спасибо, до свидания')
+        surveys_page.fill_3_description('Кредит одобрен')
         surveys_page.click_3_add_link()
-        surveys_page.fill_3_link('http://aboba.ru')
+        surveys_page.fill_3_link('https://taskfile.dev/')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'ф'
+        assert surveys_page.get_form_name() == 'Наш опрос'
 
         surveys_page.remove_lead_form()
 
@@ -628,31 +628,31 @@ class TestSurveysPage(BaseCase):
         surveys_page.click_create_surveys_button()
         surveys_page.click_last_image_name_from_media_library()
 
-        surveys_page.fill_1_compact_all_data('a', 'a', 'a', 'a')
+        surveys_page.fill_1_compact_all_data('Our survey', 'Technogarden', 'Technogarden', 'Must pass')
         surveys_page.click_continue()
-        
-        surveys_page.fill_2_title('a')
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
+
+        surveys_page.fill_2_title('Question')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_many()
-        surveys_page.fill_2_title('a')
-        surveys_page.fill_2_answer_1('a')
-        surveys_page.fill_2_answer_2('a')
+        surveys_page.fill_2_title('Question')
+        surveys_page.fill_2_answer_1('First answer')
+        surveys_page.fill_2_answer_2('Second answer')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_answer()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_add_question()
         surveys_page.click_2_selector_scale()
-        surveys_page.fill_2_title('a')
+        surveys_page.fill_2_title('Question')
         surveys_page.click_continue()
 
-        surveys_page.fill_3_thanks('a')
-        surveys_page.fill_3_description('a')
-        surveys_page.fill_3_link('http://aboba.ru')
+        surveys_page.fill_3_thanks('Thanks, bye')
+        surveys_page.fill_3_description('You banned')
+        surveys_page.fill_3_link('https://taskfile.dev/')
         surveys_page.click_continue()
 
-        assert surveys_page.get_form_name() == 'a'
+        assert surveys_page.get_form_name() == 'Our survey'
 
         surveys_page.remove_lead_form()
 
@@ -662,7 +662,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_1_compact_all_data('1', '1', '1', '1')
         surveys_page.click_continue()
-        
+
         surveys_page.fill_2_title('1')
         surveys_page.fill_2_answer_1('1')
         surveys_page.fill_2_answer_2('1')
@@ -681,7 +681,7 @@ class TestSurveysPage(BaseCase):
 
         surveys_page.fill_3_thanks('1')
         surveys_page.fill_3_description('1')
-        surveys_page.fill_3_link('http://aboba.ru')
+        surveys_page.fill_3_link('https://taskfile.dev/')
         surveys_page.click_continue()
 
         assert surveys_page.get_form_name() == '1'
