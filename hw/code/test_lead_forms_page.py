@@ -1,6 +1,4 @@
 import os
-import pytest
-import time
 from ui.locators.lead_forms_locators import LeadFormsPageLocators
 from base_case import BaseCase
 
@@ -479,7 +477,6 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        time.sleep(1)
         leadforms_page.fill_1_compact_all_data('Наша лид форма', 'Техносад', 'Наша лид форма', 'Обязательно к прохождению')
         leadforms_page.continue_1()
         leadforms_page.click_2_bin_name()
@@ -1256,7 +1253,6 @@ class TestLeadFormsPage(BaseCase):
         leadforms_page.click_create_leadform_button()
         leadforms_page.click_last_image_name_from_media_library()
 
-        time.sleep(1)
         leadforms_page.fill_1_compact_all_data('1', '1', '1', '1')
         leadforms_page.continue_1()
 

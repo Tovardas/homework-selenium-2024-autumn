@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from ui.locators.audience_page_locators import AudiencePageLocators
 from ui.pages.base_page import BasePage
+import os
 
 
 class AudiencePage(BasePage):
@@ -52,6 +53,9 @@ class AudiencePage(BasePage):
 
     def click_add_source_button(self):
         self.click(self.locators.ADD_SOURCE_BUTTON)
+
+    def click_discard_source_button(self):
+        self.click(self.locators.DISCARD_SOURCE_BUTTON)
 
     def add_source_modal_page_became_visible(self) -> bool:
         return self.became_visible(self.locators.ADD_SOURCE_MODAL_PAGE)
@@ -189,3 +193,30 @@ class AudiencePage(BasePage):
         self.driver.execute_script("arguments[0].value = '';", elem)
         elem.send_keys(audience_name)
         elem.send_keys(Keys.ENTER)
+
+    def upload_id_file(self):
+        filepath = "upload_file.txt"
+        with open(filepath, "w") as file:
+            file.write("ad\n1\n2\n3\n")
+        self.click(self.locators.LOAD_FILE_BUTTON)
+        load_file_input = self.find(self.locators.LOAD_FILE_INPUT)
+        load_file_input.send_keys(filepath)
+
+    def select_existing_file(self):
+        self.click(self.locators.SELECT_FILE)
+        self.scroll_and_click(self.locators.SELECT_FIRST_FILE)
+
+    def select_first_pixel(self):
+        self.click(self.locators.SELECT_PIXEL)
+        self.scroll_and_click(self.locators.SELECT_FIRST_PIXEL)
+
+    def set_existing_lead_form(self):
+        self.click(self.locators.SELECT_LEADFORM)
+        self.scroll_and_click(self.locators.SELECT_FIRST_LEADFORM)
+
+    def click_checkbox(self, string: str):
+        self.click(self.locators.CHECKBOX(string))
+
+    def click_audition_tags_button(self):
+        self.click(self.locators.AUDITION_TAGS_BUTTON)
+

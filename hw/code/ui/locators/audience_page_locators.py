@@ -32,9 +32,18 @@ class AudiencePageLocators(BasePageLocators):
     def SOURCE_ITEM(item_name):
         return By.XPATH, f"//*[contains(@class, 'vkuiTypography vkuiTypography--normalize vkuiTypography--weight-3 vkuiSimpleCell__children vkuiHeadline--sizeY-none vkuiHeadline--level-1') and text()='{item_name}']"
 
+    @staticmethod
+    def CHECKBOX(item_name):
+        return By.XPATH, f"//div[span[text()='[{item_name}']]//input[@type='checkbox']"
+
     ADD_SOURCE_BUTTON = (
         By.XPATH,
-        "//*[contains(@class, 'vkuiButton__content') and text()='Добавить источник']"
+        "//*[contains(@class, 'vkuiButton__content') and text()='Включить источник']"
+    )
+
+    DISCARD_SOURCE_BUTTON = (
+        By.XPATH,
+        "//*[contains(@class, 'vkuiButton__content') and text()='Исключить источник']"
     )
 
     ADD_SOURCE_MODAL_PAGE = (
@@ -89,4 +98,14 @@ class AudiencePageLocators(BasePageLocators):
     @staticmethod
     def NEW_OPTIONS(item_name):
         return By.XPATH, f"//*[text()='{item_name}']"
+
+    AUDITION_TAGS_BUTTON = (By.XPATH, "(//*[text()='Аудиторные теги'])")
+
+    SELECT_PIXEL = (By.XPATH, "(//*[class()='vkuiTypography vkuiCustomSelectInput__el vkuiCustomSelectInput__el--cursor-pointer vkuiText vkuiText--sizeY-none'])")
+    SELECT_FIRST_PIXEL = (By.XPATH, "(//*[text()='Example Domain'])")
+    SELECT_LEADFORM = (By.XPATH, "(//*[class()='vkuiTypography vkuiCustomSelectInput__el vkuiCustomSelectInput__el--cursor-pointer vkuiText vkuiText--sizeY-none'])")
+    SELECT_FIRST_LEADFORM = (By.XPATH, "(//*[text()='Наша лид форма'])")
+    SELECT_FILE = (By.XPATH,
+                    "(//*[class()='vkuiTypography vkuiCustomSelectInput__el vkuiCustomSelectInput__el--cursor-pointer vkuiText vkuiText--sizeY-none'])")
+    SELECT_FIRST_FILE = (By.XPATH, "(//*[text()='upload_file.txt'])")
 
